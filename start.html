@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ההורדה של וונדר</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F5F4F1">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preload" href="assets/fonts/Assistant.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<header class="top is-scrolled">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Wonder, לעמוד הבית">
+      <img src="assets/icon.png" alt="" width="30" height="30">
+      <span>Wonder</span>
+    </a>
+    <a class="btn" href="/" style="margin-inline-start:auto">לעמוד הבית</a>
+  </div>
+</header>
+
+<main id="start">
+  <section class="hero start">
+    <div class="wrap">
+
+      <!-- Mac: the download starts by itself (assets/start.js). -->
+      <div id="p-mac" hidden>
+        <h1>ההורדה למק מתחילה</h1>
+        <p class="lede" id="status" aria-live="polite">מכינים את ההורדה...</p>
+        <div class="cta-row">
+          <a class="btn btn-lg btn-primary" data-dmg href="https://github.com/Wonder-App/wonder-releases/releases/latest">להורדה למק</a>
+        </div>
+        <p class="start-steps">פותחים את הקובץ שירד וגוררים את וונדר לתיקיית האפליקציות. הגרסה חתומה ומאושרת אצל אפל, ולכן אין אזהרה.</p>
+      </div>
+
+      <!-- Windows: the Microsoft Store is the only route (no SmartScreen notice). -->
+      <div id="p-windows" hidden>
+        <h1>וונדר לווינדוס, דרך החנות</h1>
+        <p class="lede">ההתקנה בווינדוס היא דרך החנות של מיקרוסופט, ולכן אין הודעה מפחידה.</p>
+        <div class="cta-row">
+          <a class="btn btn-lg btn-primary" href="https://apps.microsoft.com/detail/9P688NX68S8Q">לפתיחה בחנות של מיקרוסופט</a>
+        </div>
+        <p class="start-steps">בדף שייפתח לוחצים על כפתור ההתקנה, מחכים שהחנות תסיים, ופותחים את וונדר מתפריט התחל. בחנות האפליקציה נקראת <span class="ltr">Wonder Pages</span>.</p>
+      </div>
+
+      <!-- Anything else, and the page without JavaScript. -->
+      <div id="p-other">
+        <h1>מורידים את וונדר</h1>
+        <p class="lede">וונדר היא תוכנה למחשב. בחרו את המחשב שלכם, או פתחו את הדף הזה במחשב עם מק או ווינדוס.</p>
+      </div>
+
+      <!-- Always on the page: the download did not start, or this is not your computer. -->
+      <div class="start-alt">
+        <p id="alt-title">בחרו את המחשב שלכם:</p>
+        <div class="cta-row" style="margin-top:16px">
+          <a class="btn btn-lg" data-dmg href="https://github.com/Wonder-App/wonder-releases/releases/latest">להורדה למק</a>
+          <a class="btn btn-lg" href="https://apps.microsoft.com/detail/9P688NX68S8Q">לווינדוס, בחנות של מיקרוסופט</a>
+        </div>
+        <p class="cta-note">משהו לא עובד? <a href="mailto:support@wonder-pages.com">support@wonder-pages.com</a></p>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="assets/icon.png" alt="" width="24" height="24"><span>Wonder</span></a>
+    <span>נכתבה על ידי תסריטאים, בשביל תסריטאים.</span>
+    <nav aria-label="קישורים משפטיים ותמיכה">
+      <a href="privacy.html">מדיניות פרטיות</a>
+      <a href="mailto:support@wonder-pages.com">support@wonder-pages.com</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="assets/start.js"></script>
+</body>
+</html>
