@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="pages">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0.35" y2="1"><stop offset="0" stop-color="#EEE7F6"/><stop offset="1" stop-color="#DCCFEC"/></linearGradient>
+    <linearGradient id="gl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".75"/><stop offset=".55" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <filter id="s" x="-40%" y="-40%" width="180%" height="190%"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="s2" x="-40%" y="-40%" width="180%" height="190%"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <rect x="42" y="64" width="116" height="116" rx="34" fill="#5B4776" opacity=".30" filter="url(#s)"/>
+  <rect x="48" y="52" width="104" height="116" rx="34" fill="#5B4776" opacity=".16" filter="url(#s2)" transform="translate(0 4)"/>
+  <rect x="30" y="26" width="140" height="140" rx="40" fill="url(#g)"/>
+  <rect x="30" y="26" width="140" height="140" rx="40" fill="url(#gl)"/>
+  <rect x="31" y="27" width="138" height="138" rx="39" fill="none" stroke="#fff" stroke-opacity=".85" stroke-width="2"/>
+  <g transform="translate(58 54) scale(3.5)" fill="none" stroke="#5B4776" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3.5h8.5A1.5 1.5 0 0 1 18 5v13"/><path d="M6 7h8.5A1.5 1.5 0 0 1 16 8.5V19a1.5 1.5 0 0 1-1.5 1.5h-7A1.5 1.5 0 0 1 6 19V7z"/><path d="M9 11.5h4M9 14.5h4M9 17.5h2"/></g>
+</svg>
