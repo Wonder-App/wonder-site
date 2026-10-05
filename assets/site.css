@@ -98,8 +98,9 @@ a:hover { color: var(--ink-head); }
 .top .wrap { display: flex; align-items: center; gap: 28px; height: 68px; }
 
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink-hero); }
-.brand img { width: 30px; height: 30px; }
-.brand span { font-size: 20px; font-weight: 800; letter-spacing: -.4px; }
+.brand .logo { height: 26px; width: auto; }
+/* a phrase that stays together: headings break only between phrases, never inside one */
+.ph { display: inline-block; }
 
 .nav { display: flex; gap: 28px; margin-inline-start: auto; }
 .nav a { color: var(--ink); text-decoration: none; font-size: 16px; font-weight: 500; }
@@ -204,7 +205,7 @@ a:hover { color: var(--ink-head); }
 @media (max-width: 520px) { .hero-home .cta-row .btn-lg { max-width: none; } }
 .hero-home .cta-note { margin-top: var(--s2); }
 .hero-home .say {
-  max-width: 24ch; margin: var(--s4) 0 0;
+  margin: var(--s4) 0 0;
   color: var(--ink-head);
   font-size: clamp(22px, 2.4vw, 30px);
   line-height: 1.25;
@@ -277,7 +278,7 @@ h2 {
   text-wrap: balance;
 }
 .sect-head p { margin: var(--s3) 0 0; font-size: clamp(18px, 2vw, 24px); line-height: 1.55; color: var(--ink); text-wrap: pretty; }
-h3 { margin: 0; color: var(--ink-head); font-size: 20px; line-height: 1.35; font-weight: 700; }
+h3 { margin: 0; color: var(--ink-head); font-size: 20px; line-height: 1.35; font-weight: 700; text-wrap: balance; }
 
 /* depth stage: a tinted, lit panel that the floating pieces rest on */
 .stage {
@@ -325,12 +326,12 @@ h3 { margin: 0; color: var(--ink-head); font-size: 20px; line-height: 1.35; font
 .js .from + .from { margin-top: var(--s5); }
 
 .from h3 { font-size: clamp(26px, 3vw, 36px); line-height: 1.15; font-weight: 800; letter-spacing: -.02em; }
-.from > div > p { margin: var(--s2) 0 0; color: var(--ink); }
+.from > div > p { margin: var(--s2) 0 0; color: var(--ink); text-wrap: pretty; }
 .points { margin: var(--s4) 0 0; padding: 0; list-style: none; display: grid; gap: var(--s3); }
 .points li { display: grid; grid-template-columns: 28px 1fr; gap: 12px; }
 .points svg { width: 22px; height: 22px; margin-top: 4px; color: var(--accent); }
 .points b { display: block; color: var(--ink-head); font-weight: 700; }
-.points span { color: var(--ink); font-size: 17px; }
+.points span { color: var(--ink); font-size: 17px; text-wrap: pretty; }
 
 /* the visual for each side: pieces resting on the stage */
 .from-visual { position: relative; }
@@ -370,7 +371,7 @@ h3 { margin: 0; color: var(--ink-head); font-size: 20px; line-height: 1.35; font
 }
 .note:hover { translate: 0 -6px; scale: 1.015; }
 .note h3 { color: var(--n-head); font-size: 22px; font-weight: 800; letter-spacing: -.01em; line-height: 1.25; }
-.note p { margin: 12px 0 0; font-size: 17px; line-height: 1.6; color: var(--n-body); }
+.note p { margin: 12px 0 0; font-size: 17px; line-height: 1.6; color: var(--n-body); text-wrap: pretty; }
 /* tape: a clear strip with torn ends */
 .note.taped::before {
   content: ""; position: absolute; top: -14px; left: 50%; width: 104px; height: 30px;
@@ -418,7 +419,7 @@ h3 { margin: 0; color: var(--ink-head); font-size: 20px; line-height: 1.35; font
 }
 .tile .ico svg { width: 28px; height: 28px; }
 .tile h3 { color: var(--t-head); font-size: clamp(24px, 2.6vw, 32px); font-weight: 800; letter-spacing: -.02em; }
-.tile p { margin: var(--s2) 0 0; font-size: 18px; line-height: 1.6; color: var(--t-body); max-width: 28em; }
+.tile p { margin: var(--s2) 0 0; font-size: 18px; line-height: 1.6; color: var(--t-body); max-width: 28em; text-wrap: pretty; }
 .tile-blue   { --t-bg: linear-gradient(170deg, #E8EEF8 0%, #D6E0F0 100%); --t-head: #3A5377; --t-body: #4E6486; --t-edge: rgba(58, 83, 119, .08); --t-shadow: rgba(58, 83, 119, .10); --t-shadow-deep: rgba(58, 83, 119, .30); }
 .tile-yellow { --t-bg: linear-gradient(170deg, #FAF1CD 0%, #F2E4A8 100%); --t-head: #6E5A1E; --t-body: #7A6628; --t-edge: rgba(110, 90, 30, .09); --t-shadow: rgba(110, 90, 30, .10); --t-shadow-deep: rgba(110, 90, 30, .30); }
 .tile-peach  { --t-bg: linear-gradient(170deg, #FBE7DB 0%, #F3D3C2 100%); --t-head: #80492F; --t-body: #8C573C; --t-edge: rgba(128, 73, 47, .08); --t-shadow: rgba(128, 73, 47, .10); --t-shadow-deep: rgba(128, 73, 47, .28); }
@@ -492,6 +493,7 @@ h3 { margin: 0; color: var(--ink-head); font-size: 20px; line-height: 1.35; font
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
   padding: 24px 0;
   color: #56476F; font-size: 19px; font-weight: 700;
+  text-wrap: balance;
 }
 .faq summary:hover { color: #3F3159; }
 .faq summary::-webkit-details-marker { display: none; }
@@ -522,7 +524,8 @@ h3 { margin: 0; color: var(--ink-head); font-size: 20px; line-height: 1.35; font
     radial-gradient(70% 70% at 50% 0%, rgba(255, 255, 255, .6), rgba(255, 255, 255, 0) 70%),
     linear-gradient(180deg, #E4F0EA 0%, #CFE3DA 100%);
 }
-.closing h2 { max-width: 14ch; margin-inline: auto; color: #4C6F63; }
+.closing-mark { width: 76px; height: auto; margin: 0 auto var(--s3); }
+.closing h2 { margin-inline: auto; color: #4C6F63; }
 .closing p { margin: var(--s3) auto 0; color: #4A6A5E; font-size: clamp(18px, 2vw, 24px); }
 .closing .cta-row { margin-top: var(--s4); }
 .peek { margin: var(--s6) auto 0; width: min(100%, 980px); }
@@ -536,8 +539,7 @@ h3 { margin: 0; color: var(--ink-head); font-size: 20px; line-height: 1.35; font
 .foot nav { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-inline-start: auto; }
 .foot a { color: var(--ink-faint); }
 .foot a:hover { color: var(--ink-strong); }
-.foot .brand span { font-size: 17px; }
-.foot .brand img { width: 24px; height: 24px; }
+.foot .brand .logo { height: 20px; }
 
 /* ---------- legal pages ---------- */
 .legal { max-width: 760px; margin: 0 auto; padding: 56px var(--gutter) 96px; font-size: 17px; }

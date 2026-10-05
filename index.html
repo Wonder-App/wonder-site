@@ -15,6 +15,7 @@
 <meta property="og:locale" content="he_IL">
 <link rel="canonical" href="https://wonder-pages.com/">
 <link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
 <link rel="preload" href="assets/fonts/Assistant.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="stylesheet" href="assets/site.css">
 <script>document.documentElement.classList.add('js')</script>
@@ -36,8 +37,7 @@
 <header class="top" id="top">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="וונדר, לראש העמוד">
-      <img src="assets/icon.png" alt="" width="30" height="30">
-      <span>Wonder</span>
+      <img class="logo" src="assets/logo.svg" alt="Wonder" width="119" height="26">
     </a>
     <nav class="nav" aria-label="ניווט ראשי">
       <a href="#from">עוברים לוונדר</a>
@@ -67,9 +67,9 @@
         <div class="cta-row">
           <a class="btn btn-lg btn-primary" href="https://tally.so/r/LZQZQv">הצטרפות לבטא</a>
         </div>
-        <p class="cta-note">חינם בתקופת הבטא. ממלאים טופס קצר, ומקבלים את ההורדה. <a href="#faq-install">איך מתקינים</a></p>
-        <p class="say">המקום השקט לכתוב בו את התסריט שלך.</p>
-        <p class="lede">וונדר היא תוכנת תסריטאות בעברית, שנכתבה על ידי תסריטאים בשביל תסריטאים. התסריט שכתבת ב־Word בא איתך, העמוד נראה כמו שהתעשייה מצפה, ושום דבר לא הולך לאיבוד.</p>
+        <p class="cta-note">חינם בתקופת הבטא. <a href="#faq-install">איך מתקינים</a></p>
+        <p class="say"><span class="ph">מקום שקט</span> <span class="ph">לכתוב בו תסריט.</span></p>
+        <p class="lede">תוכנת תסריטאות שנכתבה על ידי תסריטאים. התסריט מ־Word בא איתך, והעמוד נראה כמו שהתעשייה מצפה.</p>
         <ul class="by">
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>עברית מימין לשמאל, בכל מקום</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>עובדת בלי אינטרנט</li>
@@ -94,7 +94,7 @@
       <div class="sect-head center">
         <p class="kicker">עוברים בלי לאבד כלום</p>
         <h2 id="from-title">מאיפה אתם מגיעים?</h2>
-        <p>מעבר לתוכנה חדשה מפחיד. לכן וונדר בנויה כך שמה שאתם רגילים אליו ממשיך לעבוד, ומה שכתבתם בא איתכם.</p>
+        <p>מה שכתבתם בא איתכם, ומה שהידיים רגילות אליו ממשיך לעבוד.</p>
         <div class="switch" role="tablist" aria-label="מאיפה אתם מגיעים">
           <button role="tab" id="tab-word" aria-controls="from-word" aria-selected="true">אני כותב ב־Word</button>
           <button role="tab" id="tab-fd" aria-controls="from-fd" aria-selected="false" tabindex="-1">אני מגיע מ־Final Draft</button>
@@ -103,12 +103,12 @@
 
       <div class="from" id="from-word" role="tabpanel" aria-labelledby="tab-word">
         <div>
-          <h3>התסריט שלך מ־Word נפתח כמו שהוא.</h3>
-          <p>גוררים את קובץ ה־Word לתוך וונדר. היא מזהה לבד מה כותרת סצנה, מה שם דמות ומה דיאלוג.</p>
+          <h3><span class="ph">התסריט מ־Word</span> <span class="ph">נפתח כמו שהוא.</span></h3>
+          <p>גוררים את הקובץ פנימה, והתוכנה מזהה לבד כותרת סצנה, דמות ודיאלוג.</p>
           <ul class="points">
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>שום שורה לא נעלמת</b><span>שורות שהתוכנה לא בטוחה בהן מסומנות, ועוברים עליהן אחת־אחת. קובץ שאינו תסריט נכנס כטקסט.</span></div></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>אפשר תמיד לחזור ל־Word</b><span>ייצוא ל־Word ול־PDF בכל רגע, עם אותו עימוד שרואים על המסך.</span></div></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>כותבים, והעיצוב קורה לבד</b><span>Enter ו־Tab עוברים בין סוגי השורות. בשורת המצב כתוב תמיד מה ייצא בלחיצה הבאה, וממתי העבודה שמורה.</span></div></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>שום שורה לא נעלמת</b><span>שורה שהתוכנה לא בטוחה בה מסומנת לבדיקה.</span></div></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>אפשר תמיד לחזור ל־Word</b><span>ייצוא ל־Word ול־PDF, עם אותו עימוד שעל המסך.</span></div></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>כותבים, והעיצוב קורה לבד</b><span>Enter ו־Tab עוברים בין סוגי השורות.</span></div></li>
           </ul>
         </div>
         <div class="stage stage-mint">
@@ -125,12 +125,12 @@
 
       <div class="from" id="from-fd" role="tabpanel" aria-labelledby="tab-fd">
         <div>
-          <h3>הכללים של Final Draft, בעברית אמיתית.</h3>
-          <p>Final Draft נבנה סביב אנגלית. וונדר עובדת לפי אותם כללים, ונבנתה מהיסוד לעברית מימין לשמאל.</p>
+          <h3><span class="ph">הכללים של Final Draft,</span> <span class="ph">בעברית אמיתית.</span></h3>
+          <p>אותם כללים, בתוכנה שנבנתה מהיסוד לעברית.</p>
           <ul class="points">
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>המקשים שהידיים שלך מכירות</b><span>Enter ו־Tab מתנהגים כמו ב־Final Draft: מדמות לדיאלוג, מדיאלוג לתיאור.</span></div></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>עמוד הוא דקה</b><span>(המשך) נוסף לבד כשדמות חוזרת לדבר, וריווח השורות בארבע המדרגות של Final Draft.</span></div></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>קובצי ‎.fdx</b><span>קובץ Final Draft נפתח ישירות, עם סוגי השורות, הדיאלוג הכפול, עמוד השער והפתקים. ואפשר לייצא בחזרה ל־‎.fdx בכל רגע.</span></div></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>המקשים שהידיים שלך מכירות</b><span>Enter ו־Tab מתנהגים כמו ב־Final Draft.</span></div></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>עמוד הוא דקה</b><span>(המשך) נוסף לבד, והריווח כמו ב־Final Draft.</span></div></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>קובצי ‎.fdx</b><span>נפתחים ישירות, ואפשר לייצא בחזרה בכל רגע.</span></div></li>
           </ul>
         </div>
         <div class="stage stage-blue">
@@ -147,24 +147,24 @@
     <div class="wrap">
       <div class="sect-head ideas-head">
         <p class="kicker">מבלגן לסדר</p>
-        <h2 id="ideas-title">רעיון עולה באמצע סצנה. הוא לא הולך לאיבוד.</h2>
-        <p>בכתיבה יש הרבה יותר רעיונות מאשר מקום לשים אותם. וונדר נותנת להם מקום, בלי לצאת מהשורה שאתם כותבים.</p>
+        <h2 id="ideas-title"><span class="ph">רעיון עולה באמצע סצנה.</span> <span class="ph">הוא לא הולך לאיבוד.</span></h2>
+        <p>לכל רעיון יש מקום, בלי לצאת מהשורה שאתם כותבים.</p>
       </div>
       <figure class="float board-card">
         <img src="assets/ui-board.webp" width="1500" height="809" loading="lazy" alt="לוח סצנות בוונדר: כרטיסים צבעוניים, כל אחד עם טווח עמודים ושורה אחת על הסצנה, מחוברים בקווים לפי סדר העלילה.">
       </figure>
       <ul class="notes">
         <li class="note note-yellow taped" style="--tilt:-2.2deg;--tape:-4deg">
-          <h3>רושמים ברגע, וחוזרים לכתוב</h3>
-          <p>צירוף מקשים אחד (<span class="ltr">⌘⇧N</span> ב־Mac, <span class="ltr">Ctrl+Shift+N</span> ב־Windows) פותח שורה לרעיון. Enter, והסמן חוזר בדיוק לאן שהיה.</p>
+          <h3><span class="ph">רושמים ברגע,</span> <span class="ph">וחוזרים לכתוב</span></h3>
+          <p>קיצור אחד פותח שורה לרעיון. Enter, והסמן חוזר למקומו.</p>
         </li>
         <li class="note note-peach pinned" style="--tilt:1.6deg">
-          <h3>כל רעיון זוכר איפה נולד</h3>
-          <p>הפתק שומר את הסצנה והשורה שבהן נכתב, ולחיצה עליו מחזירה אתכם לשם.</p>
+          <h3><span class="ph">כל רעיון זוכר</span> <span class="ph">איפה נולד</span></h3>
+          <p>לחיצה על הפתק מחזירה לסצנה ולשורה שבהן נכתב.</p>
         </li>
         <li class="note note-violet taped" style="--tilt:-1.1deg;--tape:3deg">
-          <h3>והוא חוזר כשצריך אותו</h3>
-          <p>כשדמות או מקום שהרעיון מזכיר מגיעים לסצנה, הרעיון מופיע בשקט בשוליים של הדף, ונעלם בהקשה הבאה.</p>
+          <h3><span class="ph">והוא חוזר</span> <span class="ph">כשצריך אותו</span></h3>
+          <p>כשהדמות או המקום שבו מגיעים לסצנה, הוא מופיע בשקט בשוליים.</p>
         </li>
       </ul>
     </div>
@@ -174,28 +174,28 @@
   <section id="features" aria-labelledby="features-title">
     <div class="wrap">
       <div class="sect-head">
-        <h2 id="features-title">מה שתסריטאי צריך. בלי מה שמפריע.</h2>
+        <h2 id="features-title"><span class="ph">מה שתסריטאי צריך.</span> <span class="ph">בלי מה שמפריע.</span></h2>
       </div>
       <div class="bento">
         <article class="tile tile-blue">
           <span class="ico" aria-hidden="true"><svg><use href="#i-aleph"/></svg></span>
           <h3>עברית קודם כול</h3>
-          <p>מימין לשמאל בכל מסך, מספרים שלא מתהפכים, ובדיקת איות בעברית. לא תוספת לתוכנה באנגלית.</p>
+          <p>מימין לשמאל בכל מסך, מספרים שלא מתהפכים, ובדיקת איות.</p>
         </article>
         <article class="tile tile-yellow">
           <span class="ico" aria-hidden="true"><svg><use href="#i-pages"/></svg></span>
           <h3>עימוד כמו בתעשייה</h3>
-          <p>עמוד שנשבר נכון, שם דמות שלא נשאר לבד בתחתית, ו־(המשך) במקום הנכון. מה שרואים על המסך הוא מה שיודפס.</p>
+          <p>העמוד נשבר נכון, ומה שרואים על המסך הוא מה שיודפס.</p>
         </article>
         <article class="tile tile-peach">
           <span class="ico" aria-hidden="true"><svg><use href="#i-export"/></svg></span>
           <h3>PDF ו־Word בלחיצה</h3>
-          <p>ייצוא לשליחה להפקה, לקרן או לחבר, עם עמוד שער ומספרי סצנות.</p>
+          <p>ייצוא לשליחה, עם עמוד שער ומספרי סצנות.</p>
         </article>
         <article class="tile tile-violet">
           <span class="ico" aria-hidden="true"><svg><use href="#i-import"/></svg></span>
           <h3>ייבוא מ־Word</h3>
-          <p>תסריט קיים נכנס בגרירה אחת, עם סוגי השורות מזוהים. מה שלא ברור מסומן לבדיקה, לא נמחק.</p>
+          <p>תסריט קיים נכנס בגרירה אחת. מה שלא ברור מסומן, לא נמחק.</p>
         </article>
         <article class="tile tile-mint tile-wide">
           <div>
@@ -209,7 +209,6 @@
             <li>דמויות ומקומות מתוך התסריט</li>
             <li>נתוני תסריט: עמודים, דקות, סצנות</li>
             <li>עדכונים שמגיעים לבד</li>
-            <li>סצנה שנגמרה ועמוד חדש מורגשים, בלי יעדים ובלי לחץ</li>
           </ul>
         </article>
       </div>
@@ -221,12 +220,12 @@
     <div class="wrap">
       <div class="price-grid">
         <div>
-          <h2 id="price-title">בתקופת הבטא, וונדר בחינם.</h2>
+          <h2 id="price-title"><span class="ph">בתקופת הבטא,</span> <span class="ph">וונדר בחינם.</span></h2>
           <span class="tag">מחיר יפורסם בקרוב</span>
-          <p>כשתצא הגרסה בתשלום, תהיה תקופת ניסיון לפני שמשלמים. נודיע מראש, בתוך התוכנה.</p>
+          <p>לפני הגרסה בתשלום תהיה תקופת ניסיון, ונודיע מראש.</p>
           <ul>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>התסריטים נשמרים אצלך במחשב, בקובץ אחד שלך.</span></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>אפשר תמיד לייצא אותם ל־PDF ול־Word.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>התסריטים נשמרים אצלך במחשב.</span></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>ייצוא ל־PDF ול־Word, תמיד.</span></li>
           </ul>
           <a class="btn btn-lg btn-cream" href="https://tally.so/r/LZQZQv">להצטרפות לבטא</a>
         </div>
@@ -265,7 +264,7 @@
             </div>
           </details>
           <details>
-            <summary>איפה נשמרים התסריטים שלי? מישהו רואה אותם?</summary>
+            <summary>איפה נשמרים התסריטים, ומי רואה אותם?</summary>
             <div class="a">
               <p>התסריטים נשמרים אצלך במחשב, בתיקייה שבחרת, ואין צורך בחשבון או בהתחברות. תסריט יוצא מהמחשב רק כשאתה בוחר בכך במפורש, למשל כששולחים אותו לקריאה או מבקשים תרגום.</p>
               <p>פעם ביום התוכנה בודקת אם יש גרסה חדשה. הבדיקה לא שולחת שום דבר מהתסריטים. הפרטים המלאים ב<a href="privacy.html">מדיניות הפרטיות</a>.</p>
@@ -304,8 +303,9 @@
   <!-- ============ closing ============ -->
   <section class="closing" aria-labelledby="closing-title">
     <div class="wrap">
-      <h2 id="closing-title">העמוד הבא שלך מחכה.</h2>
-      <p>הצטרפות חינם בתקופת הבטא, ל־Mac ול־Windows.</p>
+      <img class="closing-mark" src="assets/mark.svg" alt="" width="76" height="60">
+      <h2 id="closing-title"><span class="ph">העמוד הבא שלך</span> <span class="ph">מחכה.</span></h2>
+      <p>חינם בתקופת הבטא, ל־Mac ול־Windows.</p>
       <div class="cta-row">
         <a class="btn btn-lg btn-primary" href="https://tally.so/r/LZQZQv">הצטרפות לבטא</a>
       </div>
@@ -321,7 +321,7 @@
 
 <footer class="foot">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="assets/icon.png" alt="" width="24" height="24"><span>Wonder</span></a>
+    <a class="brand" href="#top"><img class="logo" src="assets/logo.svg" alt="Wonder" width="119" height="26"></a>
     <span>נכתבה על ידי תסריטאים, בשביל תסריטאים.</span>
     <nav aria-label="קישורים משפטיים ותמיכה">
       <a href="privacy.html">מדיניות פרטיות</a>
