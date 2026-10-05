@@ -10,7 +10,7 @@
  */
 (function () {
   var KEY = 'wonder.intro.shownAt', EVERY_MS = 24 * 3600 * 1000
-  var PLAY_MS = 3100, FADE_MS = 450, GIVE_UP_MS = 1100
+  var RATE = 1.35, PLAY_MS = 2300, FADE_MS = 450, GIVE_UP_MS = 1100
   try {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     var last = Number(localStorage.getItem(KEY) || 0)
@@ -30,8 +30,10 @@
   video.setAttribute('muted', '')
   video.setAttribute('playsinline', '')
   video.preload = 'auto'
+  video.defaultPlaybackRate = RATE
+  video.playbackRate = RATE
   video.poster = base + 'wonder-intro-poster-start.webp'
-  video.style.cssText = 'width:min(70vmin,560px);height:min(70vmin,560px);object-fit:cover;' +
+  video.style.cssText = 'width:min(48vmin,400px);height:min(48vmin,400px);object-fit:cover;' +
     '-webkit-mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);mask-image:radial-gradient(closest-side,#000 62%,transparent 100%)'
   ;[['wonder-intro-720.webm', 'video/webm'], ['wonder-intro-720.mp4', 'video/mp4']].forEach(function (f) {
     var s = document.createElement('source')
