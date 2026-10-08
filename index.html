@@ -157,7 +157,7 @@
         <div class="float tour-frame">
           <div class="tour-canvas">
             <div class="tour-scene" data-scene="notes"><img src="assets/ui-notes.webp" width="2000" height="1250" loading="lazy" alt="עמוד תסריט בוונדר ולצדו סרגל הפתקים: רעיונות חופשיים למעלה, ומתחתם פתקים צבעוניים לפי הסצנה שבה נכתבו."></div>
-            <div class="tour-scene tour-scene-phone" data-scene="phone"><figure class="float phone"><img src="assets/ui-phone-idea.webp" width="640" height="1020" loading="lazy" alt="דף הרעיונות של וונדר בטלפון: פתק צהוב על כל המסך ובו רעיון אחד שנכתב בדרך."></figure></div>
+            <div class="tour-scene tour-scene-devices" data-scene="phone"><figure class="device device-phone" style="--sb:#F4E8B8"><img src="assets/ui-phone-idea.webp" width="640" height="1020" loading="lazy" alt="טלפון ועליו דף הרעיונות של וונדר: פתק צהוב על כל המסך ובו רעיון אחד שנכתב בדרך."></figure></div>
           </div>
         </div>
         <ol class="tour-steps" aria-label="סיור בסרגל הפתקים">
@@ -292,7 +292,7 @@
         <div class="float tour-frame">
           <div class="tour-canvas">
             <div class="tour-scene" data-scene="send"><img src="assets/ui-share.webp" width="2000" height="1250" loading="lazy" alt="חלון ״שליחה לקריאה״ בוונדר: שדה לשם הקורא, כוכב ״חשוב״, הוספת שם, הוספת סיסמה וכפתור ״צור לינקים״."></div>
-            <div class="tour-scene tour-scene-phone" data-scene="reader"><figure class="float phone"><img src="assets/ui-phone-reader.webp" width="640" height="1020" loading="lazy" alt="דף הקריאה בטלפון: ״שלום דנה״, התסריט בעמודים, וכפתורים ״ההערות שלי״ ו״סיימתי״."></figure></div>
+            <div class="tour-scene tour-scene-devices tour-scene-pair" data-scene="reader"><figure class="device device-tablet"><img src="assets/ui-tablet-reader.webp" width="1400" height="1011" loading="lazy" alt="טאבלט ועליו דף הקריאה של וונדר: ״שלום דנה״, עמוד השער והעמוד הראשון של התסריט, וכפתורים ״ההערות שלי״ ו״סיימתי״."></figure><figure class="device device-phone" style="--sb:#F3F2EE"><img src="assets/ui-phone-reader.webp" width="640" height="1020" loading="lazy" alt="אותו דף קריאה בטלפון."></figure></div>
             <div class="tour-scene" data-scene="notes"><img src="assets/ui-readers.webp" width="2000" height="1250" loading="lazy" alt="עמוד תסריט בוונדר ולצדו סרגל ״הערות קוראים״: שלוש הערות של קוראת בשם דנה, כל אחת מחוברת לשורה שעליה נכתבה."></div>
           </div>
         </div>
@@ -303,13 +303,13 @@
           </li>
           <li data-scene="reader">
             <button type="button" class="tour-step">הקורא פותח בדפדפן</button>
-            <div class="tour-body"><p>גם בטלפון, בלי להתקין כלום ובלי להירשם. התסריט מוצג בעמודים, כמו על נייר.</p></div>
+            <div class="tour-body"><p>בטאבלט, בטלפון או במחשב, בלי להתקין כלום ובלי להירשם. התסריט מוצג בעמודים, כמו על נייר.</p></div>
           </li>
-          <li data-scene="reader" data-r="2,13.5,96,10">
+          <li data-scene="reader" data-r="57,10.5,27,9.5">
             <button type="button" class="tour-step">מעירים על המילים עצמן</button>
             <div class="tour-body"><p>מסמנים מילים או לוחצים על שורה, וכותבים. ההערה נשארת צמודה למקום.</p></div>
           </li>
-          <li data-scene="reader" data-r="3,1,44,7.5">
+          <li data-scene="reader" data-img="1" data-r="3,1,44,7.5">
             <button type="button" class="tour-step">״סיימתי״</button>
             <div class="tour-body"><p>רק כשהקורא לוחץ, ההערות נשלחות אליך, כולן יחד.</p></div>
           </li>
@@ -539,7 +539,7 @@
     function rect(li) {
       // The element's box as fractions of the canvas, from layout offsets (transforms don't count).
       var r = (li.dataset.r || '').split(',').map(Number); if (r.length !== 4) return null;
-      var sc = sceneOf(li), t = sc.querySelector('img'), x = 0, y = 0, w = t.offsetWidth, h = t.offsetHeight, W = canvas.offsetWidth, H = canvas.offsetHeight;
+      var sc = sceneOf(li), t = sc.querySelectorAll('img')[li.dataset.img || 0], x = 0, y = 0, w = t.offsetWidth, h = t.offsetHeight, W = canvas.offsetWidth, H = canvas.offsetHeight;
       for (var el = t; el && el !== canvas; el = el.offsetParent) { x += el.offsetLeft; y += el.offsetTop; }
       return { x: (x + w * r[0] / 100) / W, y: (y + h * r[1] / 100) / H, w: w * r[2] / 100 / W, h: h * r[3] / 100 / H };
     }
