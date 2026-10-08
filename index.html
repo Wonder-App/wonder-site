@@ -42,7 +42,8 @@
     <nav class="nav" aria-label="ניווט ראשי">
       <a href="#from">עוברים לוונדר</a>
       <a href="#ideas">רעיונות</a>
-      <a href="#features">מה יש בפנים</a>
+      <a href="#tools">כלים</a>
+      <a href="#share">שיתוף</a>
       <a href="#price">מחיר</a>
       <a href="#faq">שאלות</a>
     </nav>
@@ -81,7 +82,7 @@
         <figure class="float">
           <picture>
             <source media="(max-width: 640px)" srcset="assets/ui-page-menu.webp" type="image/webp">
-            <img src="assets/ui-editor.webp" width="2000" height="1250" alt="חלון וונדר: עמוד תסריט בעברית עם כותרות סצנה, דמויות ודיאלוג, ובצד רשימת הסצנות עם מספרי העמודים." fetchpriority="high">
+            <img src="assets/ui-editor.webp" width="2000" height="1250" alt="חלון וונדר: עמוד תסריט בעברית עם כותרות סצנה, דמויות ודיאלוג, ובצד כרטיסי הסצנות עם המקום, השעה ומספר העמוד." fetchpriority="high">
           </picture>
         </figure>
       </div>
@@ -115,10 +116,10 @@
         <div class="stage stage-mint">
           <div class="from-visual">
             <figure class="float dialog-card">
-              <img src="assets/ui-dialog.webp" width="1100" height="938" loading="lazy" alt="חלון ״פרויקט חדש״ בוונדר: שם התסריט, בחירה בין דף ריק למקובץ קיים, וסוג הפרויקט.">
+              <img src="assets/ui-dialog.webp" width="1100" height="1059" loading="lazy" alt="חלון ״פרויקט חדש״ בוונדר: שם התסריט, בחירה בין דף ריק למקובץ קיים, סוג הפרויקט ויעד העמודים.">
             </figure>
             <figure class="float tile-card">
-              <img src="assets/ui-tile.webp" width="407" height="242" loading="lazy" alt="אריח ״מקובץ קיים״ ובו הכיתוב Word, Final Draft, Fountain.">
+              <img src="assets/ui-tile.webp" width="412" height="238" loading="lazy" alt="אריח ״מקובץ קיים״ ובו הכיתוב Word, Final Draft, Fountain.">
             </figure>
           </div>
         </div>
@@ -136,7 +137,7 @@
         </div>
         <div class="stage stage-blue">
           <figure class="float menu-card">
-            <img src="assets/ui-page-menu.webp" width="1500" height="685" loading="lazy" alt="עמוד תסריט בעברית בוונדר, ולצדו תפריט סוגי השורות: כותרת סצנה, תיאור, שם דמות, הנחיה, דיאלוג ומעבר, כל אחד עם קיצור מקלדת.">
+            <img src="assets/ui-page-menu.webp" width="1500" height="585" loading="lazy" alt="עמוד תסריט בעברית בוונדר, ולצדו תפריט סוגי השורות: כותרת סצנה, תיאור, שם דמות, הנחיה, דיאלוג ומעבר, כל אחד עם קיצור מקלדת.">
           </figure>
         </div>
       </div>
@@ -152,9 +153,36 @@
         <h2 id="ideas-title"><span class="ph">רעיון עולה באמצע סצנה.</span> <span class="ph">הוא לא הולך לאיבוד.</span></h2>
         <p>לכל רעיון יש מקום, בלי לצאת מהשורה שאתם כותבים.</p>
       </div>
-      <figure class="float board-card">
-        <img src="assets/ui-board.webp" width="1500" height="809" loading="lazy" alt="לוח סצנות בוונדר: כרטיסים צבעוניים, כל אחד עם טווח עמודים ושורה אחת על הסצנה, מחוברים בקווים לפי סדר העלילה.">
-      </figure>
+      <div class="tour" data-tour>
+        <div class="float tour-frame">
+          <div class="tour-canvas">
+            <div class="tour-scene" data-scene="notes"><img src="assets/ui-notes.webp" width="2000" height="1250" loading="lazy" alt="עמוד תסריט בוונדר ולצדו סרגל הפתקים: רעיונות חופשיים למעלה, ומתחתם פתקים צבעוניים לפי הסצנה שבה נכתבו."></div>
+            <div class="tour-scene tour-scene-phone" data-scene="phone"><figure class="float phone"><img src="assets/ui-phone-idea.webp" width="640" height="1020" loading="lazy" alt="דף הרעיונות של וונדר בטלפון: פתק צהוב על כל המסך ובו רעיון אחד שנכתב בדרך."></figure></div>
+          </div>
+        </div>
+        <ol class="tour-steps" aria-label="סיור בסרגל הפתקים">
+          <li data-scene="notes">
+            <button type="button" class="tour-step">הפתקים יושבים ליד העמוד</button>
+            <div class="tour-body"><p>סרגל אחד בצד התסריט. הוא נפתח ונסגר בלי שעוזבים את השורה שכותבים.</p></div>
+          </li>
+          <li data-scene="notes" data-r="75.5,7.5,19.5,7.5">
+            <button type="button" class="tour-step">פתק חדש, בקיצור אחד</button>
+            <div class="tour-body"><p>קיצור מקלדת פותח שורה לרעיון. Enter, והסמן חוזר בדיוק למקום שבו עצרתם.</p></div>
+          </li>
+          <li data-scene="notes" data-r="75.5,45,19.5,34">
+            <button type="button" class="tour-step">כל פתק זוכר איפה נולד</button>
+            <div class="tour-body"><p>מעל הפתק כתובה הסצנה שלו, ובתחתיתו מספר הסצנה והעמוד. לחיצה עליו מחזירה לשם.</p></div>
+          </li>
+          <li data-scene="notes" data-r="75.5,16.5,19.5,27">
+            <button type="button" class="tour-step">רעיונות חופשיים</button>
+            <div class="tour-body"><p>רעיון שעוד לא שייך לשום סצנה מחכה למעלה, עד שתמצאו לו מקום.</p></div>
+          </li>
+          <li data-scene="phone" data-r="0,0,100,34">
+            <button type="button" class="tour-step">ובדרך, כותבים בטלפון</button>
+            <div class="tour-body"><p>דף אחד בטלפון, שכולו מקום לכתוב. מחברים פעם אחת בסריקת קוד, בלי חשבון ובלי חנות. הרעיון נשלח גם אם לא הייתה קליטה, ומחכה ברעיונות החופשיים.</p></div>
+          </li>
+        </ol>
+      </div>
       <ul class="notes">
         <li class="note note-yellow taped" style="--tilt:-2.2deg;--tape:-4deg">
           <h3><span class="ph">רושמים ברגע,</span> <span class="ph">וחוזרים לכתוב</span></h3>
@@ -169,6 +197,136 @@
           <p>כשהדמות או המקום שבו מגיעים לסצנה, הוא מופיע בשקט בשוליים.</p>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <!-- ============ tools: beat board, characters ============ -->
+  <section id="tools" aria-labelledby="tools-title">
+    <div class="wrap">
+      <div class="sect-head center">
+        <p class="kicker">לפני הכתיבה, ותוך כדי</p>
+        <h2 id="tools-title"><span class="ph">הסיפור והדמויות,</span> <span class="ph">ליד התסריט.</span></h2>
+        <p>לוח הביטים ודפי הדמויות יושבים באותו קובץ, במרחק לחיצה מהעמוד.</p>
+      </div>
+
+      <div class="tour tour-flip" data-tour>
+        <div class="float tour-frame">
+          <div class="tour-canvas">
+            <div class="tour-scene" data-scene="board"><img src="assets/ui-board.webp" width="2000" height="1250" loading="lazy" alt="לוח הביטים בוונדר: למעלה סרגל של 120 עמודים עם שלוש מערכות, ומתחתיו כרטיסי ביטים צבעוניים מחוברים בקווים, כל אחד עם טווח עמודים."></div>
+          </div>
+        </div>
+        <ol class="tour-steps" aria-label="סיור בלוח הביטים">
+          <li data-scene="board">
+            <button type="button" class="tour-step">לוח הביטים</button>
+            <div class="tour-body"><p>מסך מלא לבנות בו את הסיפור, לפני שכותבים סצנה ותוך כדי.</p></div>
+          </li>
+          <li data-scene="board" data-r="50,5,50,6.5">
+            <button type="button" class="tour-step">סרגל של כל התסריט</button>
+            <div class="tour-body"><p>הסרגל מראה את האורך שתכננתם. לחיצה על ״יעד״ משנה אותו, והלוח כולו מתיישר.</p></div>
+          </li>
+          <li data-scene="board" data-r="38,10,62,8.5">
+            <button type="button" class="tour-step">המערכות, כפסים על הסרגל</button>
+            <div class="tour-body"><p>רואים כמה עמודים תופסת כל מערכה, ואיפה יושב כל ביט בתוכה.</p></div>
+          </li>
+          <li data-scene="board" data-r="55.5,29,19,11.5">
+            <button type="button" class="tour-step">כרטיס לכל ביט</button>
+            <div class="tour-body"><p>כותרת, שורה אחת על מה שקורה, וטווח העמודים שלו. הצבע אומר לאיזה קו הוא שייך.</p></div>
+          </li>
+          <li data-scene="board" data-r="55,28.5,20,53">
+            <button type="button" class="tour-step">קווים בין הביטים</button>
+            <div class="tour-body"><p>ביט שנולד מביט אחר מחובר אליו בקו, וכך רואים את השרשרת של הסיפור.</p></div>
+          </li>
+          <li data-scene="board" data-r="92.5,90.5,7,9">
+            <button type="button" class="tour-step">ביט חדש</button>
+            <div class="tour-body"><p>כפתור אחד מוסיף כרטיס. גוררים אותו למקום, והסרגל מתעדכן.</p></div>
+          </li>
+        </ol>
+      </div>
+
+      <div class="tour" data-tour>
+        <div class="float tour-frame">
+          <div class="tour-canvas">
+            <div class="tour-scene" data-scene="chars"><img src="assets/ui-chars.webp" width="2000" height="1250" loading="lazy" alt="מסך הדמויות בוונדר: שלושה כרטיסים, כל דמות בצבע משלה, עם מספר הסצנות והשורות שלה."></div>
+            <div class="tour-scene" data-scene="char"><img src="assets/ui-char.webp" width="2000" height="1250" loading="lazy" alt="דף דמות בוונדר: מיכל, דמות ראשית, עם משפט אחד עליה ומתחתיו גיל ועיסוק, מה היא רוצה, ממה היא מפחדת ואיך היא מדברת."></div>
+          </div>
+        </div>
+        <ol class="tour-steps" aria-label="סיור בדפי הדמויות">
+          <li data-scene="chars" data-r="25.5,32,66.5,30">
+            <button type="button" class="tour-step">הדמויות נאספות מהתסריט</button>
+            <div class="tour-body"><p>לכל דמות כרטיס בצבע שלה, ועליו בכמה סצנות היא מופיעה וכמה שורות יש לה.</p></div>
+          </li>
+          <li data-scene="chars" data-r="60,18,31,5.5">
+            <button type="button" class="tour-step">תסריט אחד, או כל הפרויקט</button>
+            <div class="tour-body"><p>בסדרה, אותן דמויות מלוות את כל הפרקים. בוחרים מה רואים.</p></div>
+          </li>
+          <li data-scene="char" data-r="46,22,27.5,21">
+            <button type="button" class="tour-step">דף לכל דמות</button>
+            <div class="tour-body"><p>הוא מתחיל מהבסיס: דיוקן, שם ומשפט אחד שאומר מי היא.</p></div>
+          </li>
+          <li data-scene="char" data-r="35,29.5,29,6">
+            <button type="button" class="tour-step">תפקיד</button>
+            <div class="tour-body"><p>ראשי, משני, אנטגוניסט. התפקיד קובע איפה הדמות עומדת ברשימה.</p></div>
+          </li>
+          <li data-scene="char" data-r="38.5,45.5,34.5,40">
+            <button type="button" class="tour-step">רק החלקים שעוזרים לך</button>
+            <div class="tour-body"><p>רצון, פחד, קול. כל חלק הוא כמה שורות חופשיות, ואפשר לשנות לו את השם.</p></div>
+          </li>
+          <li data-scene="char" data-r="39,86.5,34.5,8.5">
+            <button type="button" class="tour-step">מוסיפים כשיש מה לכתוב</button>
+            <div class="tour-body"><p>מראה, פצע, מסע, קשרים. חלק שלא צריך פשוט לא נמצא על הדף.</p></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ share: a reading link, notes come back ============ -->
+  <section id="share" aria-labelledby="share-title">
+    <div class="wrap">
+      <div class="sect-head center">
+        <p class="kicker">שיתוף</p>
+        <h2 id="share-title"><span class="ph">שולחים לקריאה.</span> <span class="ph">ההערות חוזרות לתסריט.</span></h2>
+        <p>בלי קובצי PDF עם סימונים, ובלי הערות שמתפזרות בין מייל לווטסאפ.</p>
+      </div>
+      <div class="tour tour-flip" data-tour>
+        <div class="float tour-frame">
+          <div class="tour-canvas">
+            <div class="tour-scene" data-scene="send"><img src="assets/ui-share.webp" width="2000" height="1250" loading="lazy" alt="חלון ״שליחה לקריאה״ בוונדר: שדה לשם הקורא, כוכב ״חשוב״, הוספת שם, הוספת סיסמה וכפתור ״צור לינקים״."></div>
+            <div class="tour-scene tour-scene-phone" data-scene="reader"><figure class="float phone"><img src="assets/ui-phone-reader.webp" width="640" height="1020" loading="lazy" alt="דף הקריאה בטלפון: ״שלום דנה״, התסריט בעמודים, וכפתורים ״ההערות שלי״ ו״סיימתי״."></figure></div>
+            <div class="tour-scene" data-scene="notes"><img src="assets/ui-readers.webp" width="2000" height="1250" loading="lazy" alt="עמוד תסריט בוונדר ולצדו סרגל ״הערות קוראים״: שלוש הערות של קוראת בשם דנה, כל אחת מחוברת לשורה שעליה נכתבה."></div>
+          </div>
+        </div>
+        <ol class="tour-steps" aria-label="סיור בשליחה לקריאה">
+          <li data-scene="send" data-r="29.7,26,40.6,48">
+            <button type="button" class="tour-step">שם לכל קורא, לינק לכל שם</button>
+            <div class="tour-body"><p>כותבים מי קורא, ולכל אחד נוצר לינק אישי. שולחים אותו בווטסאפ או במייל, ואפשר להוסיף סיסמה.</p></div>
+          </li>
+          <li data-scene="reader">
+            <button type="button" class="tour-step">הקורא פותח בדפדפן</button>
+            <div class="tour-body"><p>גם בטלפון, בלי להתקין כלום ובלי להירשם. התסריט מוצג בעמודים, כמו על נייר.</p></div>
+          </li>
+          <li data-scene="reader" data-r="2,13.5,96,10">
+            <button type="button" class="tour-step">מעירים על המילים עצמן</button>
+            <div class="tour-body"><p>מסמנים מילים או לוחצים על שורה, וכותבים. ההערה נשארת צמודה למקום.</p></div>
+          </li>
+          <li data-scene="reader" data-r="3,1,44,7.5">
+            <button type="button" class="tour-step">״סיימתי״</button>
+            <div class="tour-body"><p>רק כשהקורא לוחץ, ההערות נשלחות אליך, כולן יחד.</p></div>
+          </li>
+          <li data-scene="notes" data-r="5,45,48,13.5">
+            <button type="button" class="tour-step">ההערות נוחתות על התסריט</button>
+            <div class="tour-body"><p>כל הערה מסומנת על השורה שלה, בדיוק על המילים שהקורא סימן.</p></div>
+          </li>
+          <li data-scene="notes" data-r="75.5,34.5,19.5,20">
+            <button type="button" class="tour-step">מי כתב, ועל מה</button>
+            <div class="tour-body"><p>בסרגל: שם הקורא, המילים שסומנו, וההערה. ״טופל״ מוריד אותה מהדרך.</p></div>
+          </li>
+          <li data-scene="notes" data-r="75,0.5,21,5.5">
+            <button type="button" class="tour-step">סבב קריאה</button>
+            <div class="tour-body"><p>מי פתח ומי סיים, ביטול לינק, עוד קורא. התסריט מוצפן לפני שהוא יוצא מהמחשב, והלינקים נסגרים עם הסבב או אחרי 60 יום.</p></div>
+          </li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -209,7 +367,7 @@
             <li>שמירה אוטומטית וגיבויים</li>
             <li>טיוטות ונקודות שמירה</li>
             <li>חיפוש והחלפה</li>
-            <li>דמויות ומקומות מתוך התסריט</li>
+            <li>דיאלוג כפול וסוגי שורה משלך</li>
             <li>נתוני תסריט: עמודים, דקות, סצנות</li>
             <li>עדכונים שמגיעים לבד</li>
           </ul>
@@ -364,16 +522,77 @@
   });
   select(tabs[0]);
 
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Tours: the picture explains itself. Each step fades to its screen, moves in on one element,
+  // rings it and says what it does; steps advance by themselves while the tour is on screen, and a
+  // click takes over. Without JS the first screen shows and every step's text is readable.
+  [].slice.call(document.querySelectorAll('[data-tour]')).forEach(function (tour) {
+    var canvas = tour.querySelector('.tour-canvas');
+    var frame = tour.querySelector('.tour-frame');
+    var scenes = [].slice.call(tour.querySelectorAll('.tour-scene'));
+    var steps = [].slice.call(tour.querySelectorAll('.tour-steps > li'));
+    var rings = [], cur = -1, timer = 0, auto = !calm, seen = false;
+    var dots = document.createElement('div'); dots.className = 'tour-dots';
+    tour.classList.add('live');
+    function sceneOf(li) { return scenes.filter(function (sc) { return sc.dataset.scene === li.dataset.scene; })[0]; }
+    function rect(li) {
+      // The element's box as fractions of the canvas, from layout offsets (transforms don't count).
+      var r = (li.dataset.r || '').split(',').map(Number); if (r.length !== 4) return null;
+      var sc = sceneOf(li), t = sc.querySelector('img'), x = 0, y = 0, w = t.offsetWidth, h = t.offsetHeight, W = canvas.offsetWidth, H = canvas.offsetHeight;
+      for (var el = t; el && el !== canvas; el = el.offsetParent) { x += el.offsetLeft; y += el.offsetTop; }
+      return { x: (x + w * r[0] / 100) / W, y: (y + h * r[1] / 100) / H, w: w * r[2] / 100 / W, h: h * r[3] / 100 / H };
+    }
+    function select(i) {
+      cur = i;
+      var li = steps[i], sc = sceneOf(li), b = rect(li), s = 1, tx = 0, ty = 0;
+      if (b) {
+        s = Math.max(1, Math.min(.78 / b.w, .78 / b.h, 2.3));
+        tx = Math.min(0, Math.max(1 - s, .5 - (b.x + b.w / 2) * s));
+        ty = Math.min(0, Math.max(1 - s, .5 - (b.y + b.h / 2) * s));
+        if (!rings[i]) {
+          rings[i] = document.createElement('span'); rings[i].className = 'tour-ring';
+          rings[i].style.cssText = 'left:' + b.x * 100 + '%;top:' + b.y * 100 + '%;width:' + b.w * 100 + '%;height:' + b.h * 100 + '%';
+          canvas.appendChild(rings[i]);
+        }
+      }
+      canvas.style.setProperty('--s', s);
+      canvas.style.setProperty('--tx', tx * 100 + '%');
+      canvas.style.setProperty('--ty', ty * 100 + '%');
+      scenes.forEach(function (x) { x.classList.toggle('on', x === sc); });
+      rings.forEach(function (r, k) { if (r) r.classList.toggle('on', k === i); });
+      steps.forEach(function (x, k) {
+        x.classList.toggle('on', k === i);
+        x.querySelector('.tour-step').setAttribute('aria-expanded', k === i ? 'true' : 'false');
+        dots.children[k].setAttribute('aria-current', k === i ? 'true' : 'false');
+      });
+    }
+    function tick() { clearTimeout(timer); if (auto && seen) timer = setTimeout(function () { select((cur + 1) % steps.length); tick(); }, 5200); }
+    function take(i) { auto = false; tour.classList.remove('auto'); clearTimeout(timer); select(i); }
+    steps.forEach(function (li, i) {
+      li.querySelector('.tour-step').addEventListener('click', function () { take(i); });
+      var d = document.createElement('button'); d.type = 'button'; d.textContent = i + 1;
+      d.setAttribute('aria-label', li.querySelector('.tour-step').textContent);
+      d.addEventListener('click', function () { take(i); });
+      dots.appendChild(d);
+    });
+    tour.insertBefore(dots, tour.querySelector('.tour-steps'));
+    if (auto) tour.classList.add('auto');
+    select(0);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { seen = es[0].isIntersecting; tick(); }, { threshold: .5 }).observe(frame);
+    }
+  });
+
   // Light entrances: things settle into place as they scroll into view. Without JS, or with
   // reduced motion, nothing is hidden and nothing moves.
-  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!calm && 'IntersectionObserver' in window) {
     var groups = [
       '.hero-home .copy > *, .hero-home .titleblock > *',
       '.hero-shot',
       '.sect-head, .switch',
       '.from > *',
-      '.board-card',
+      '.board-card', '.tour',
       '.note',
       '.tile',
       '.price-grid > *',
