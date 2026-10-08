@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>הדרכה: וונדר בדקה | Wonder</title>
+<meta name="description" content="סרטוני הדרכה קצרים לוונדר: הדף הראשון, סדרה ופרקים, ייצוא, והגדרות. כל סרטון דקה אחת או פחות, בלי קול, עם כתוביות.">
+<meta name="theme-color" content="#F5F4F1">
+<meta property="og:title" content="וונדר בדקה: סרטוני הדרכה">
+<meta property="og:description" content="הדף הראשון, סדרה ופרקים, ייצוא והגדרות — כל אחד בפחות מדקה.">
+<meta property="og:image" content="https://wonder-pages.com/assets/og-card.jpg">
+<meta property="og:url" content="https://wonder-pages.com/learn.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<link rel="canonical" href="https://wonder-pages.com/learn.html">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/icon.png">
+<link rel="preload" href="assets/fonts/Assistant.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  /* The tutorials page (2026-10-06): the site's own type and tokens; one
+     column of clips on a phone, two on a wide screen. Each clip is the real
+     app, filmed by tests/tutorialVideos.spec.ts. */
+  .learn-hero { padding-block: clamp(48px, 7vw, 96px) clamp(24px, 3vw, 40px); }
+  .learn-hero h1 { margin: 0; font-size: clamp(34px, 5vw, 56px); line-height: 1.1; color: var(--ink-head); letter-spacing: -0.01em; }
+  .learn-hero p { margin: 14px 0 0; max-width: 56ch; font-size: clamp(17px, 1.6vw, 20px); color: var(--ink); }
+  .clips { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 36px); padding-bottom: var(--section); }
+  @media (max-width: 820px) { .clips { grid-template-columns: 1fr; } }
+  .clip { margin: 0; display: flex; flex-direction: column; gap: 14px; }
+  .clip .float { overflow: hidden; background: var(--surface); }
+  .clip video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; background: var(--ground-sunk); border-radius: inherit; }
+  .clip figcaption { display: flex; flex-direction: column; gap: 4px; }
+  .clip .n { font-size: 14px; font-weight: 600; color: var(--accent-ink); }
+  .clip h2 { margin: 0; font-size: clamp(21px, 2vw, 25px); color: var(--ink-strong); }
+  .clip p { margin: 0; font-size: 16px; line-height: 1.55; color: var(--ink); }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">דלג לתוכן</a>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="וונדר, לעמוד הבית">
+      <img class="logo" src="assets/logo.svg" alt="Wonder" width="119" height="26">
+    </a>
+    <nav class="nav" aria-label="ניווט ראשי">
+      <a href="index.html#from">עוברים לוונדר</a>
+      <a href="index.html#features">מה יש בפנים</a>
+      <a href="learn.html" aria-current="page">הדרכה</a>
+      <a href="index.html#faq">שאלות</a>
+    </nav>
+    <a class="btn" href="https://tally.so/r/LZQZQv">הצטרפות לבטא</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="learn-hero" aria-labelledby="learn-title">
+    <div class="wrap">
+      <h1 id="learn-title">וונדר בדקה</h1>
+      <p>ארבעה סרטונים קצרים, כל אחד דבר אחד. בלי קול, עם כתוביות — אפשר לצפות גם בשקט. ובתוך התוכנה, בפעם הראשונה שתפגשו כל דבר, יופיע לידו הסבר קצר.</p>
+    </div>
+  </section>
+
+  <section aria-label="סרטוני הדרכה">
+    <div class="wrap clips">
+      <figure class="clip">
+        <div class="float"><video src="assets/learn/01-first-page.mp4" poster="assets/learn/01-first-page.jpg" controls muted playsinline preload="none" width="1280" height="800" aria-label="סרטון: הדף הראשון"></video></div>
+        <figcaption>
+          <span class="n">1 · 25 שניות</span>
+          <h2>הדף הראשון</h2>
+          <p>כותרת סצנה שמשלימה את עצמה, ואז Enter ו־Tab בין תיאור, דמות ודיאלוג. אין מה לעצב — העמוד מסתדר לבד.</p>
+        </figcaption>
+      </figure>
+      <figure class="clip">
+        <div class="float"><video src="assets/learn/02-series.mp4" poster="assets/learn/02-series.jpg" controls muted playsinline preload="none" width="1280" height="800" aria-label="סרטון: סדרה ופרקים"></video></div>
+        <figcaption>
+          <span class="n">2 · 25 שניות</span>
+          <h2>סדרה ופרקים</h2>
+          <p>שם הסדרה, הפרק הראשון וכמה עמודים לפרק. בעמוד השער מופיע שם הסדרה ומתחתיו הפרק, וכל פרק חדש מקבל את המספר הבא מעצמו.</p>
+        </figcaption>
+      </figure>
+      <figure class="clip">
+        <div class="float"><video src="assets/learn/03-export.mp4" poster="assets/learn/03-export.jpg" controls muted playsinline preload="none" width="1280" height="800" aria-label="סרטון: ייצוא"></video></div>
+        <figcaption>
+          <span class="n">3 · 15 שניות</span>
+          <h2>ייצוא</h2>
+          <p>הכפתור הירוק למעלה: PDF בתקן, Word או Final Draft, עם עמוד שער ומספרי סצנות לפי הבחירה.</p>
+        </figcaption>
+      </figure>
+      <figure class="clip">
+        <div class="float"><video src="assets/learn/04-settings.mp4" poster="assets/learn/04-settings.jpg" controls muted playsinline preload="none" width="1280" height="800" aria-label="סרטון: ההגדרות"></video></div>
+        <figcaption>
+          <span class="n">4 · 15 שניות</span>
+          <h2>ההגדרות</h2>
+          <p>כל כרטיס מצייר מה הוא משנה בדף: ריווח, מספרי סצנות, יעד עמודים, ואיך התוכנה פונה אליכם.</p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="logo" src="assets/logo.svg" alt="Wonder" width="119" height="26"></a>
+    <span>נכתבה על ידי תסריטאים, בשביל תסריטאים.</span>
+    <nav aria-label="קישורים משפטיים ותמיכה">
+      <a href="privacy.html">מדיניות פרטיות</a>
+      <a href="mailto:support@wonder-pages.com">support@wonder-pages.com</a>
+    </nav>
+  </div>
+</footer>
+<script>
+  // Header hairline once the page scrolls; one clip plays at a time.
+  (function () {
+    var top = document.getElementById('top')
+    var onScroll = function () { top.classList.toggle('is-scrolled', window.scrollY > 8) }
+    window.addEventListener('scroll', onScroll, { passive: true }); onScroll()
+    var vids = document.querySelectorAll('.clip video')
+    vids.forEach(function (v) {
+      v.addEventListener('play', function () { vids.forEach(function (o) { if (o !== v) o.pause() }) })
+    })
+  })()
+</script>
+</body>
+</html>
