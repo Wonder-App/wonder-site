@@ -347,6 +347,105 @@ h3 { margin: 0; color: var(--ink-head); font-size: 20px; line-height: 1.35; font
   box-shadow: var(--float);
 }
 .menu-card { --fr: clamp(14px, 2vw, 24px); }
+/* the Final Draft side: the picture stands on the page itself, large, with no tinted panel behind it */
+@media (min-width: 900px) { #from-fd { grid-template-columns: 4fr 7fr; } }
+
+/* ---------- exploded views: the screen in the middle, real parts pulled out of it,
+   a few words beside each. Nothing hidden, nothing to step through. ---------- */
+.explode { position: relative; margin-top: var(--s5); display: grid; gap: var(--s4); }
+.explode + .explode { margin-top: var(--s6); }
+.ex-base { --fr: clamp(12px, 1.6vw, 20px); }
+.ex-item { display: grid; gap: var(--s2); justify-items: start; }
+.ex-part { --fr: clamp(8px, 1vw, 12px); width: min(100%, var(--mw, 420px)); }
+/* a cut part is the element itself: no frame of ours, only the shadow its own shape casts */
+.ex-cut { margin: 0; filter: drop-shadow(0 1px 1.5px rgba(48, 44, 60, .22)) drop-shadow(0 14px 18px rgba(48, 44, 60, .24)); }
+.ex-cut img { display: block; width: 100%; height: auto; }
+.ex-device { width: min(46%, 200px); }
+.ex-devices { position: relative; width: min(100%, 380px); aspect-ratio: 4 / 3; }
+.ex-label { margin: 0; display: grid; gap: 2px; }
+.ex-label b { color: var(--ink-head); font-size: 19px; font-weight: 600; line-height: 1.3; }
+.ex-label span { color: var(--ink); font-size: 16px; line-height: 1.5; text-wrap: pretty; }
+@media (min-width: 900px) {
+  .explode { display: block; aspect-ratio: 1200 / 530; margin-top: var(--s4); }
+  .ex-base { position: absolute; left: 24%; top: 12%; width: 52%; }
+  .ex-item { display: contents; }
+  .ex-part, .ex-label { position: absolute; left: var(--x); top: var(--y); width: var(--w); }
+  .ex-part { z-index: 2; }
+}
+
+/* a sequence across screens (sending for reading): separate screens side by side, in order */
+.flow { list-style: none; margin: var(--s5) 0 0; padding: 0; display: grid; gap: var(--s5) clamp(24px, 3.4vw, var(--s5)); counter-reset: flow; }
+.flow-step { display: grid; gap: var(--s3); align-content: start; min-width: 0; }
+.flow-shot { display: grid; place-items: center; }
+.flow-step .ex-devices { width: min(100%, 640px); aspect-ratio: 640 / 410; }
+.flow-screen { position: relative; width: 100%; padding-inline-start: 10%; padding-bottom: 22%; }
+.flow-screen .ex-base { position: relative; left: auto; top: auto; width: 100%; }
+.flow-note { position: absolute; inset-inline-start: 0; bottom: 0; width: 74%; }
+.flow .ex-label { position: relative; width: auto; padding-inline-start: 44px; }
+.flow .ex-label::before {
+  counter-increment: flow; content: counter(flow); position: absolute; inset-inline-start: 0; top: 0;
+  width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center;
+  border: 1px solid var(--line-strong); color: var(--ink-faint); font-size: 16px; font-weight: 600;
+}
+@media (min-width: 900px) {
+  .flow { grid-template-columns: 1.5fr 1fr; align-items: start; max-width: 1080px; margin-inline: auto; }
+  .flow-shot { min-height: 410px; place-items: end center; }
+  .flow .ex-label { left: auto; top: auto; }
+}
+/* one element in several states: the first state always stands, the others pass over it in turn */
+@media (max-width: 899px) { .ex-cycle { position: relative; } }
+.ex-cycle img:not(:first-child) { position: absolute; inset: 0; opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  /* each state lands with a small bounce: a little small, a little past its size, then settled */
+  .ex-cycle img { animation: excycle calc(var(--n) * 1.7s) infinite backwards; animation-delay: calc(var(--i) * 1.7s); }
+  @keyframes excycle {
+    0% { opacity: 0; scale: var(--from, .84); }
+    2.5% { opacity: 1; scale: var(--pop, 1.04); }
+    5% { scale: calc(1 - (var(--pop, 1.04) - 1) * .12); }
+    7% { scale: 1; }
+    20% { opacity: 1; scale: 1; }
+    23% { opacity: 0; scale: 1; }
+    100% { opacity: 0; scale: 1; }
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .js .ex-part.rv.in { animation: pullout .9s cubic-bezier(.2, .8, .2, 1) backwards; animation-delay: calc(.25s + var(--d, 0s)); }
+  @keyframes pullout { from { opacity: 0; scale: .82; } to { opacity: 1; scale: 1; } }
+}
+
+/* the reader page and the phone page are shown on the devices people open them on.
+   A device takes its width from its place and its height from what is inside it. */
+.device {
+  position: relative; margin: 0; flex: none; box-sizing: border-box;
+  background: linear-gradient(150deg, #3B3936, #1C1B19 60%);
+  box-shadow: 0 0 0 1px #5E5B56, 0 0 0 1px rgba(255, 255, 255, .10) inset, 0 2px 4px rgba(30, 26, 20, .25), 0 26px 44px -20px rgba(30, 26, 20, .55);
+}
+.device { display: flow-root; }
+.device .screen { display: block; overflow: hidden; }
+.device img { display: block; width: 100%; height: auto; border-radius: 0; }
+/* a real phone: 9 by 19.5, a clear bezel with side buttons, the camera island and the home bar */
+.device-phone { width: 31%; border-radius: 17% / 8%; }
+.device-phone::before, .device-phone::after {
+  content: ""; position: absolute; width: 1.1%; border-radius: 2px; background: #3A3835;
+}
+.device-phone::before { left: -1.4%; top: 21%; height: 5.2%; }
+.device-phone::after { right: -1.4%; top: 27%; height: 9%; }
+.device-phone .screen { position: relative; margin: 3.4%; border-radius: 13.8% / 6.4%; }
+.device-phone .screen::after {
+  content: ""; position: absolute; left: 50%; bottom: 1%; width: 35%; aspect-ratio: 28 / 1; translate: -50% 0;
+  border-radius: 99px; background: rgba(28, 27, 24, .34);
+}
+.device-phone .sb { display: block; position: relative; aspect-ratio: 390 / 47; }
+.device-phone .sb::after {
+  content: ""; position: absolute; left: 50%; top: 56%; width: 29%; aspect-ratio: 3.4 / 1;
+  transform: translate(-50%, -50%); border-radius: 999px; background: #1F1E1C;
+}
+.device-tablet { width: 68%; border-radius: 3.8% / 5.2%; }
+.device-tablet .screen { margin: 1.5%; border-radius: 2.4% / 3.3%; }
+.ex-devices .device { position: absolute; }
+.ex-devices .device-tablet { left: 0; top: 4%; width: 80%; }
+.ex-devices .device-phone { right: 0; top: 10%; width: 25%; z-index: 1; }
+.ex-device .device-phone { width: 100%; }
 
 /* ---------- ideas ---------- */
 .ideas-head { max-width: 40em; }
@@ -396,6 +495,8 @@ h3 { margin: 0; color: var(--ink-head); font-size: 20px; line-height: 1.35; font
 /* ---------- features: a bento of five tinted tiles, 40px apart ---------- */
 .bento { display: grid; gap: clamp(24px, 3.5vw, var(--s4)); margin-top: var(--s5); }
 @media (min-width: 720px) { .bento { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 720px) { .bento-3 { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1100px) { .bento-3 { margin-top: calc(var(--s5) + 40px); } }
 .tile {
   position: relative;
   padding: clamp(28px, 3.6vw, 48px);

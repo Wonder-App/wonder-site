@@ -42,7 +42,8 @@
     <nav class="nav" aria-label="ניווט ראשי">
       <a href="#from">עוברים לוונדר</a>
       <a href="#ideas">רעיונות</a>
-      <a href="#features">מה יש בפנים</a>
+      <a href="#tools">כלים</a>
+      <a href="#share">שיתוף</a>
       <a href="#price">מחיר</a>
       <a href="#faq">שאלות</a>
     </nav>
@@ -69,7 +70,7 @@
         </div>
         <p class="cta-note">חינם בתקופת הבטא. ההצטרפות בהזמנה. <a href="#faq-install">איך מתקינים</a></p>
         <p class="say"><span class="ph">מקום שקט</span> <span class="ph">לכתוב בו תסריט.</span></p>
-        <p class="lede">תוכנת תסריטאות שנכתבה על ידי תסריטאים. התסריט מ־Word בא איתך, והעמוד נראה כמו שהתעשייה מצפה.</p>
+        <p class="lede">נכתבה על ידי תסריטאים. התסריט מ־Word בא איתך.</p>
         <ul class="by">
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>עברית מימין לשמאל, בכל מקום</li>
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>עובדת בלי אינטרנט</li>
@@ -81,9 +82,30 @@
         <figure class="float">
           <picture>
             <source media="(max-width: 640px)" srcset="assets/ui-page-menu.webp" type="image/webp">
-            <img src="assets/ui-editor.webp" width="2000" height="1250" alt="חלון וונדר: עמוד תסריט בעברית עם כותרות סצנה, דמויות ודיאלוג, ובצד רשימת הסצנות עם מספרי העמודים." fetchpriority="high">
+            <img src="assets/ui-editor.webp" width="2000" height="1250" alt="חלון וונדר: עמוד תסריט בעברית עם כותרות סצנה, דמויות ודיאלוג, ובצד כרטיסי הסצנות עם המקום, השעה ומספר העמוד." fetchpriority="high">
           </picture>
         </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ writing: the line mark ============ -->
+  <section id="write" aria-labelledby="write-title">
+    <div class="wrap">
+      <div class="sect-head center">
+        <p class="kicker">הכתיבה</p>
+        <h2 id="write-title"><span class="ph">כותבים.</span> <span class="ph">העיצוב קורה לבד.</span></h2>
+      </div>
+      <div class="explode">
+        <figure class="float ex-base"><img src="assets/e-editor.webp" width="2000" height="1250" loading="lazy" alt="חלון וונדר: עמוד תסריט בעברית, והסמן עומד על כותרת הסצנה הראשונה."></figure>
+        <div class="ex-item">
+          <figure class="ex-part ex-cut ex-cycle" style="--x:73%;--y:27%;--w:5%;--mw:39px;--n:5;--pop:1.14;--from:0.84"><img src="assets/x-mark-0.webp" width="90" height="90" loading="lazy" alt="סמן השורה, שמתחלף לפי סוג השורה: כותרת סצנה, תיאור, שם דמות, הנחיה, דיאלוג." style="--i:0"><img src="assets/x-mark-1.webp" width="90" height="90" loading="lazy" alt="" style="--i:1"><img src="assets/x-mark-2.webp" width="90" height="90" loading="lazy" alt="" style="--i:2"><img src="assets/x-mark-3.webp" width="90" height="90" loading="lazy" alt="" style="--i:3"><img src="assets/x-mark-4.webp" width="90" height="90" loading="lazy" alt="" style="--i:4"></figure>
+          <p class="ex-label ex-right" style="--x:82%;--y:27%;--w:18%"><b>סמן השורה</b><span>מתחלף לבד לפי השורה.</span></p>
+        </div>
+        <div class="ex-item">
+          <figure class="ex-part ex-cut ex-cycle" style="--x:66%;--y:44%;--w:12%;--mw:159px;--n:5;--pop:1;--from:1"><img src="assets/x-menu-0.webp" width="366" height="642" loading="lazy" alt="רשימת סוגי השורה, והסוג של השורה הנוכחית מסומן בה." style="--i:0"><img src="assets/x-menu-1.webp" width="366" height="642" loading="lazy" alt="" style="--i:1"><img src="assets/x-menu-2.webp" width="366" height="642" loading="lazy" alt="" style="--i:2"><img src="assets/x-menu-3.webp" width="366" height="642" loading="lazy" alt="" style="--i:3"><img src="assets/x-menu-4.webp" width="366" height="642" loading="lazy" alt="" style="--i:4"></figure>
+          <p class="ex-label ex-right" style="--x:82%;--y:56%;--w:18%"><b>לחיצה משנה סוג</b><span>כל סוג עם המספר שלו.</span></p>
+        </div>
       </div>
     </div>
   </section>
@@ -95,7 +117,6 @@
         <img class="ill ill-top" src="assets/art/page.webp" alt="" width="69" height="84" loading="lazy">
         <p class="kicker">עוברים בלי לאבד כלום</p>
         <h2 id="from-title">מאיפה אתם מגיעים?</h2>
-        <p>מה שכתבתם בא איתכם, ומה שהידיים רגילות אליו ממשיך לעבוד.</p>
         <div class="switch" role="tablist" aria-label="מאיפה אתם מגיעים">
           <button role="tab" id="tab-word" aria-controls="from-word" aria-selected="true">אני כותב ב־Word</button>
           <button role="tab" id="tab-fd" aria-controls="from-fd" aria-selected="false" tabindex="-1">אני מגיע מ־Final Draft</button>
@@ -107,18 +128,17 @@
           <h3><span class="ph">התסריט מ־Word</span> <span class="ph">נפתח כמו שהוא.</span></h3>
           <p>גוררים את הקובץ פנימה, והתוכנה מזהה לבד כותרת סצנה, דמות ודיאלוג.</p>
           <ul class="points">
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>שום שורה לא נעלמת</b><span>שורה שהתוכנה לא בטוחה בה מסומנת לבדיקה.</span></div></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>אפשר תמיד לחזור ל־Word</b><span>ייצוא ל־Word ול־PDF, עם אותו עימוד שעל המסך.</span></div></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>כותבים, והעיצוב קורה לבד</b><span>Enter ו־Tab עוברים בין סוגי השורות.</span></div></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>שום שורה לא נעלמת</b><span>שורה לא ברורה מסומנת לבדיקה.</span></div></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>אפשר תמיד לחזור ל־Word</b><span>ייצוא ל־Word ול־PDF, באותו עימוד.</span></div></li>
           </ul>
         </div>
         <div class="stage stage-mint">
           <div class="from-visual">
             <figure class="float dialog-card">
-              <img src="assets/ui-dialog.webp" width="1100" height="938" loading="lazy" alt="חלון ״פרויקט חדש״ בוונדר: שם התסריט, בחירה בין דף ריק למקובץ קיים, וסוג הפרויקט.">
+              <img src="assets/ui-dialog.webp" width="1100" height="1059" loading="lazy" alt="חלון ״פרויקט חדש״ בוונדר: שם התסריט, בחירה בין דף ריק למקובץ קיים, סוג הפרויקט ויעד העמודים.">
             </figure>
             <figure class="float tile-card">
-              <img src="assets/ui-tile.webp" width="407" height="242" loading="lazy" alt="אריח ״מקובץ קיים״ ובו הכיתוב Word, Final Draft, Fountain.">
+              <img src="assets/ui-tile.webp" width="412" height="238" loading="lazy" alt="אריח ״מקובץ קיים״ ובו הכיתוב Word, Final Draft, Fountain.">
             </figure>
           </div>
         </div>
@@ -127,16 +147,15 @@
       <div class="from" id="from-fd" role="tabpanel" aria-labelledby="tab-fd">
         <div>
           <h3><span class="ph">הכללים של Final Draft,</span> <span class="ph">בעברית אמיתית.</span></h3>
-          <p>אותם כללים, בתוכנה שנבנתה מהיסוד לעברית.</p>
           <ul class="points">
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>המקשים שהידיים שלך מכירות</b><span>Enter ו־Tab מתנהגים כמו ב־Final Draft.</span></div></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>עמוד הוא דקה</b><span>(המשך) נוסף לבד, והריווח כמו ב־Final Draft.</span></div></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>קובצי ‎.fdx</b><span>נפתחים ישירות, ואפשר לייצא בחזרה בכל רגע.</span></div></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>המקשים שהידיים שלך מכירות</b><span>Enter ו־Tab, כמו ב־Final Draft.</span></div></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>עמוד הוא דקה</b><span>(המשך) נוסף לבד, והריווח זהה.</span></div></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>קובצי ‎.fdx</b><span>נפתחים ישירות, ומיוצאים בחזרה.</span></div></li>
           </ul>
         </div>
-        <div class="stage stage-blue">
+        <div class="from-plain">
           <figure class="float menu-card">
-            <img src="assets/ui-page-menu.webp" width="1500" height="685" loading="lazy" alt="עמוד תסריט בעברית בוונדר, ולצדו תפריט סוגי השורות: כותרת סצנה, תיאור, שם דמות, הנחיה, דיאלוג ומעבר, כל אחד עם קיצור מקלדת.">
+            <img src="assets/ui-page-menu.webp" width="1500" height="585" loading="lazy" alt="עמוד תסריט בעברית בוונדר, ולצדו תפריט סוגי השורות: כותרת סצנה, תיאור, שם דמות, הנחיה, דיאלוג ומעבר, כל אחד עם קיצור מקלדת.">
           </figure>
         </div>
       </div>
@@ -150,25 +169,89 @@
       <div class="sect-head ideas-head">
         <p class="kicker">מבלגן לסדר</p>
         <h2 id="ideas-title"><span class="ph">רעיון עולה באמצע סצנה.</span> <span class="ph">הוא לא הולך לאיבוד.</span></h2>
-        <p>לכל רעיון יש מקום, בלי לצאת מהשורה שאתם כותבים.</p>
       </div>
-      <figure class="float board-card">
-        <img src="assets/ui-board.webp" width="1500" height="809" loading="lazy" alt="לוח סצנות בוונדר: כרטיסים צבעוניים, כל אחד עם טווח עמודים ושורה אחת על הסצנה, מחוברים בקווים לפי סדר העלילה.">
-      </figure>
-      <ul class="notes">
-        <li class="note note-yellow taped" style="--tilt:-2.2deg;--tape:-4deg">
-          <h3><span class="ph">רושמים ברגע,</span> <span class="ph">וחוזרים לכתוב</span></h3>
-          <p>קיצור אחד פותח שורה לרעיון. Enter, והסמן חוזר למקומו.</p>
+      <div class="explode">
+        <figure class="float ex-base"><img src="assets/e-notes.webp" width="2000" height="1250" loading="lazy" alt="עמוד תסריט בוונדר ולצדו סרגל הפתקים."></figure>
+        <div class="ex-item">
+          <figure class="ex-part ex-cut" style="--x:56%;--y:5%;--w:22%;--mw:296px"><img src="assets/x-new.webp" width="684" height="132" loading="lazy" alt="שדה ״פתק חדש״ עם קיצור המקלדת."></figure>
+          <p class="ex-label ex-right" style="--x:82%;--y:5%;--w:18%"><b>פתק חדש</b><span>בקיצור מקלדת, בלי לעזוב את השורה.</span></p>
+        </div>
+        <div class="ex-item">
+          <figure class="ex-part ex-cut" style="--x:58%;--y:50%;--w:22%;--mw:296px"><img src="assets/x-card.webp" width="684" height="333" loading="lazy" alt="פתק צהוב ועליו הדמות, הרעיון, ומספר הסצנה והעמוד."></figure>
+          <p class="ex-label ex-right" style="--x:82%;--y:55%;--w:18%"><b>פתק של סצנה</b><span>לחיצה מחזירה לסצנה ולעמוד שכתובים עליו.</span></p>
+        </div>
+        <div class="ex-item">
+          <div class="ex-part ex-device" style="--x:19%;--y:8%;--w:15.5%"><figure class="device device-phone"><span class="screen"><span class="sb" style="background-color:#F4E8B8"></span><img src="assets/t-phone-idea.webp" width="1170" height="2391" loading="lazy" alt="טלפון ועליו דף הרעיונות של וונדר, עם רעיון אחד שנכתב בדרך."></span></figure></div>
+          <p class="ex-label ex-left" style="--x:0%;--y:38%;--w:18%"><b>רעיון מהטלפון</b><span>נכתב בדרך, מחכה בתסריט.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ tools: beat board, characters ============ -->
+  <section id="tools" aria-labelledby="tools-title">
+    <div class="wrap">
+      <div class="sect-head center">
+        <h2 id="tools-title">לוח הביטים</h2>
+        <p>מסדרים את השלד של הסיפור.</p>
+      </div>
+      <div class="explode">
+        <figure class="float ex-base"><img src="assets/e-board.webp" width="2000" height="1250" loading="lazy" alt="לוח הביטים בוונדר: סרגל עמודים, מערכות וכרטיסי ביטים מחוברים בקווים."></figure>
+        <div class="ex-item">
+          <figure class="ex-part ex-cut" style="--x:3%;--y:1%;--w:77%;--mw:1439px"><img src="assets/x-timeline.webp" width="3321" height="306" loading="lazy" alt="סרגל העמודים של לוח הביטים, מ־1 עד 120, ומתחתיו שלוש המערכות והביטים שעליהן."></figure>
+          <p class="ex-label ex-right" style="--x:82%;--y:1%;--w:18%"><b>הסרגל והמערכות</b><span>האורך של כל מערכה, בעמודים.</span></p>
+        </div>
+        <div class="ex-item">
+          <figure class="ex-part ex-cut" style="--x:58%;--y:42%;--w:22%;--mw:286px"><img src="assets/x-beat.webp" width="660" height="243" loading="lazy" alt="כרטיס ביט: מערכה שנייה, שורה אחת, עמודים 31 עד 90."></figure>
+          <p class="ex-label ex-right" style="--x:82%;--y:46%;--w:18%"><b>כרטיס לכל ביט</b><span>כותרת, שורה, עמודים.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ characters ============ -->
+  <section id="cast" aria-labelledby="cast-title">
+    <div class="wrap">
+      <div class="sect-head center">
+        <h2 id="cast-title">דף הדמויות</h2>
+        <p>כל דמות, וכל מה שיודעים עליה.</p>
+      </div>
+      <div class="explode">
+        <figure class="float ex-base"><img src="assets/e-char.webp" width="2000" height="1250" loading="lazy" alt="דף דמות בוונדר: מיכל, דמות ראשית."></figure>
+        <div class="ex-item">
+          <figure class="ex-part ex-cut" style="--x:16%;--y:6%;--w:20%;--mw:346px"><img src="assets/x-cast.webp" width="798" height="669" loading="lazy" alt="כרטיס הדמות מיכל: גיל 38, שלוש סצנות וחמש שורות."></figure>
+          <p class="ex-label ex-left" style="--x:0%;--y:18%;--w:14.5%"><b>הדמויות נאספות לבד</b><span>סצנות ושורות לכל אחת.</span></p>
+        </div>
+        <div class="ex-item">
+          <figure class="ex-part ex-cut" style="--x:69%;--y:20%;--w:9%;--mw:122px"><img src="assets/x-portrait.webp" width="282" height="282" loading="lazy" alt="הדיוקן של הדמות, עם כפתור העריכה שלו."></figure>
+          <p class="ex-label ex-right" style="--x:82%;--y:24%;--w:18%"><b>דף לכל דמות</b><span>שם, תפקיד, משפט אחד.</span></p>
+        </div>
+        <div class="ex-item">
+          <figure class="ex-part ex-cut" style="--x:68%;--y:72%;--w:9%;--mw:90px"><img src="assets/x-chip.webp" width="207" height="120" loading="lazy" alt="כפתור להוספת החלק ״פצע״ לדף הדמות."></figure>
+          <p class="ex-label ex-right" style="--x:82%;--y:71%;--w:18%"><b>רק מה שעוזר</b><span>מוסיפים חלק כשצריך.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ share: a reading link, notes come back ============ -->
+  <section id="share" aria-labelledby="share-title">
+    <div class="wrap">
+      <div class="sect-head center">
+        <p class="kicker">שיתוף</p>
+        <h2 id="share-title"><span class="ph">שולחים לקריאה.</span> <span class="ph">ההערות חוזרות לתסריט.</span></h2>
+        <p>בלי PDF מסומן, ובלי הערות שמתפזרות.</p>
+      </div>
+      <ol class="flow">
+        <li class="flow-step">
+          <div class="flow-shot"><div class="ex-devices"><figure class="device device-tablet"><span class="screen"><img src="assets/t-tablet-reader.webp" width="2160" height="1560" loading="lazy" alt="טאבלט ועליו דף הקריאה של וונדר: ״שלום דנה״ והעמוד הראשון של התסריט."></span></figure><figure class="device device-phone"><span class="screen"><span class="sb" style="background-color:#F3F2EE"></span><img src="assets/t-phone-reader.webp" width="1170" height="2391" loading="lazy" alt="אותו דף קריאה בטלפון."></span></figure></div></div>
+          <p class="ex-label"><b>כל קורא מקבל לינק אישי</b><span>נפתח בטאבלט או בטלפון, בלי התקנה.</span></p>
         </li>
-        <li class="note note-peach pinned" style="--tilt:1.6deg">
-          <h3><span class="ph">כל רעיון זוכר</span> <span class="ph">איפה נולד</span></h3>
-          <p>לחיצה על הפתק מחזירה לסצנה ולשורה שבהן נכתב.</p>
+        <li class="flow-step flow-wide">
+          <div class="flow-shot"><div class="flow-screen"><figure class="float ex-base"><img src="assets/e-readers.webp" width="2000" height="1250" loading="lazy" alt="עמוד תסריט בוונדר ולצדו סרגל ״הערות קוראים״."></figure><figure class="ex-cut flow-note"><img src="assets/x-note.webp" width="684" height="427" loading="lazy" alt="הערה של קוראת בשם דנה, עם המילים שסימנה."></figure></div></div>
+          <p class="ex-label"><b>ההערות חוזרות לתסריט</b><span>על המילים שהקורא סימן.</span></p>
         </li>
-        <li class="note note-violet taped" style="--tilt:-1.1deg;--tape:3deg">
-          <h3><span class="ph">והוא חוזר</span> <span class="ph">כשצריך אותו</span></h3>
-          <p>כשהדמות או המקום שבו מגיעים לסצנה, הוא מופיע בשקט בשוליים.</p>
-        </li>
-      </ul>
+      </ol>
     </div>
   </section>
 
@@ -179,26 +262,21 @@
       <div class="sect-head">
         <h2 id="features-title"><span class="ph">מה שתסריטאי צריך.</span> <span class="ph">בלי מה שמפריע.</span></h2>
       </div>
-      <div class="bento">
+      <div class="bento bento-3">
         <article class="tile tile-blue">
           <span class="ico ico-letter" aria-hidden="true">א</span>
           <h3>עברית קודם כול</h3>
-          <p>מימין לשמאל בכל מסך, מספרים שלא מתהפכים, ובדיקת איות.</p>
+          <p>מימין לשמאל בכל מסך, עם בדיקת איות.</p>
         </article>
         <article class="tile tile-yellow">
           <span class="ico" aria-hidden="true"><svg><use href="#i-pages"/></svg></span>
           <h3>עימוד כמו בתעשייה</h3>
-          <p>העמוד נשבר נכון, ומה שרואים על המסך הוא מה שיודפס.</p>
+          <p>מה שעל המסך הוא מה שיודפס.</p>
         </article>
         <article class="tile tile-peach">
           <span class="ico" aria-hidden="true"><svg><use href="#i-export"/></svg></span>
           <h3>PDF ו־Word בלחיצה</h3>
-          <p>ייצוא לשליחה, עם עמוד שער ומספרי סצנות.</p>
-        </article>
-        <article class="tile tile-violet">
-          <span class="ico" aria-hidden="true"><svg><use href="#i-import"/></svg></span>
-          <h3>ייבוא מ־Word</h3>
-          <p>תסריט קיים נכנס בגרירה אחת. מה שלא ברור מסומן, לא נמחק.</p>
+          <p>עם עמוד שער ומספרי סצנות.</p>
         </article>
         <article class="tile tile-mint tile-wide">
           <div>
@@ -209,7 +287,7 @@
             <li>שמירה אוטומטית וגיבויים</li>
             <li>טיוטות ונקודות שמירה</li>
             <li>חיפוש והחלפה</li>
-            <li>דמויות ומקומות מתוך התסריט</li>
+            <li>דיאלוג כפול וסוגי שורה משלך</li>
             <li>נתוני תסריט: עמודים, דקות, סצנות</li>
             <li>עדכונים שמגיעים לבד</li>
           </ul>
@@ -311,7 +389,7 @@
     <div class="wrap">
       <img class="closing-mark ill" src="assets/art/door.webp" alt="" width="73" height="120" loading="lazy">
       <h2 id="closing-title"><span class="ph">העמוד הבא שלך</span> <span class="ph">מחכה.</span></h2>
-      <p>חינם בתקופת הבטא, ל־Mac ול־Windows. ההצטרפות בהזמנה.</p>
+      <p>חינם בתקופת הבטא. ההצטרפות בהזמנה.</p>
       <div class="cta-row">
         <a class="btn btn-lg btn-primary" href="https://tally.so/r/LZQZQv">הצטרפות לבטא</a>
       </div>
@@ -364,16 +442,17 @@
   });
   select(tabs[0]);
 
+  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // Light entrances: things settle into place as they scroll into view. Without JS, or with
   // reduced motion, nothing is hidden and nothing moves.
-  var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!calm && 'IntersectionObserver' in window) {
     var groups = [
       '.hero-home .copy > *, .hero-home .titleblock > *',
       '.hero-shot',
       '.sect-head, .switch',
       '.from > *',
-      '.board-card',
+      '.ex-base', '.ex-part', '.ex-label', '.flow-shot',
       '.note',
       '.tile',
       '.price-grid > *',
