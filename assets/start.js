@@ -36,6 +36,22 @@
     return null
   }
 
+  // N76 d — the welcome mail's link carries the writer's key and first name in the
+  // FRAGMENT (#key=…&name=…), which the browser never sends to any server. After the
+  // download the page offers one link that opens Wonder with both: the key is
+  // activated and the first-run welcome already holds the name (the tester:
+  // "התוכנה שואלת אותי שם פעמיים"). Gmail strips wonder:// links from mail, so
+  // the page is the bridge. Returns the wonder:// link, or null.
+  function activationLink(hash) {
+    var p = new URLSearchParams(String(hash || '').replace(/^#/, ''))
+    var key = String(p.get('key') || '').trim().toUpperCase()
+    if (!/^WNDR-[0-9A-Z]{5}-[0-9A-Z]{5}-[0-9A-Z]{5}-[0-9A-Z]{5}$/.test(key)) return null
+    var name = String(p.get('name') || '').replace(/\s+/g, ' ').trim()
+    var link = 'wonder://activate?key=' + key
+    if (name && name.length <= 40) link += '&name=' + encodeURIComponent(name)
+    return link
+  }
+
   function run(doc, win) {
     var q = new URLSearchParams(win.location.search)
     var platform = pickPlatform(win.navigator.userAgent, win.navigator.maxTouchPoints, q.get('os'))
@@ -45,6 +61,11 @@
     Object.keys(panels).forEach(function (k) { panels[k].hidden = k !== platform })
     doc.documentElement.setAttribute('data-platform', platform)
     if (platform !== 'other') $('alt-title').textContent = 'ההורדה לא התחילה, או שזה לא המחשב שלכם?'
+    var opener = activationLink(win.location.hash)
+    if (opener && platform !== 'other' && $('p-key')) {
+      $('open-wonder').href = opener
+      $('p-key').hidden = false
+    }
 
     if (platform !== 'mac') return
     var links = [].slice.call(doc.querySelectorAll('[data-dmg]'))
@@ -67,5 +88,5 @@
 
   if (typeof document !== 'undefined' && document.getElementById('p-mac')) run(document, window)
 
-  return { pickPlatform: pickPlatform, pickDmg: pickDmg, STORE_WEB: STORE_WEB, RELEASES_PAGE: RELEASES_PAGE }
+  return { pickPlatform: pickPlatform, pickDmg: pickDmg, activationLink: activationLink, STORE_WEB: STORE_WEB, RELEASES_PAGE: RELEASES_PAGE }
 })

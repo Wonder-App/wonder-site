@@ -115,7 +115,7 @@ a:hover { color: var(--ink-head); }
   border: 1px solid rgba(70, 66, 58, .14);
   background: linear-gradient(180deg, #FFFFFF, #F6F4EF);
   color: var(--ink-head);
-  font: 700 15px/1 var(--ui-font);
+  font: 700 16px/1 var(--ui-font);
   text-decoration: none;
   white-space: nowrap;
   box-shadow: 0 1px 0 rgba(255, 255, 255, .9) inset, 0 1px 2px rgba(48, 44, 60, .08), 0 6px 14px -8px rgba(48, 44, 60, .22);
@@ -170,14 +170,14 @@ a:hover { color: var(--ink-head); }
 }
 .cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 36px; }
 @media (max-width: 520px) { .cta-row .btn-lg { width: 100%; max-width: 320px; } }
-.cta-note { margin: 16px 0 0; font-size: 15px; color: var(--ink-faint); }
+.cta-note { margin: 16px 0 0; font-size: 16px; color: var(--ink-faint); }
 .cta-note a { color: inherit; }
 
 .hero-home { position: relative; isolation: isolate; background: var(--ground); text-align: start; padding-top: clamp(32px, 5vw, 72px); padding-bottom: 0; overflow: clip; }
 .hero-home .copy { position: relative; z-index: 1; max-width: 640px; }
 .titleblock { width: fit-content; max-width: 100%; }
 .hero-home h1 { margin: 0; max-width: none; font-size: inherit; letter-spacing: 0; text-wrap: wrap; }
-/* light weights, not 800: the heavy cut read as a billboard, "משרדי". The whole site follows: headings 400-500, small heads 600 (N75, Amir 2026-10-08) */
+/* No reading text on the site is under 16px (Amir, 2026-10-08). Light weights, not 800: the heavy cut read as a billboard, "משרדי". The whole site follows: headings 400-500, small heads 600 (N75, Amir 2026-10-08) */
 .hero-home .mark {
   display: block;
   color: var(--ink-hero);
@@ -215,9 +215,9 @@ a:hover { color: var(--ink-head); }
   text-wrap: balance;
 }
 .hero-home .lede { margin: var(--s2) 0 0; max-width: 31em; font-size: clamp(17px, 1.7vw, 20px); }
-.hero-home .by { justify-content: flex-start; gap: 8px 28px; margin-top: var(--s3); font-size: 14.5px; color: var(--ink-faint); }
+.hero-home .by { justify-content: flex-start; gap: 8px 28px; margin-top: var(--s3); font-size: 16px; color: var(--ink-faint); }
 .hero-home .by li { gap: 6px; }
-.hero-home .by svg { width: 14px; height: 14px; }
+.hero-home .by svg { width: 15px; height: 15px; }
 
 /* the sheet of paper curling at the left edge: a real photograph, faded into the ground */
 .paper {
@@ -270,7 +270,7 @@ section { padding-block: var(--section); }
 .hero-home { padding-bottom: var(--s6); }
 .sect-head { max-width: 40em; }
 .sect-head.center { margin-inline: auto; text-align: center; }
-.kicker { margin: 0 0 var(--s2); font-size: 15px; font-weight: 600; letter-spacing: .02em; color: var(--accent-ink); }
+.kicker { margin: 0 0 var(--s2); font-size: 16px; font-weight: 600; letter-spacing: .02em; color: var(--accent-ink); }
 h2 {
   margin: 0;
   color: var(--ink-head);
@@ -516,7 +516,7 @@ h3 { margin: 0; color: var(--ink-head); font-size: 20px; line-height: 1.35; font
 .faq .a a { color: #3D2F5C; }
 .faq code, .legal code {
   direction: ltr; unicode-bidi: isolate; display: inline-block;
-  font: 14px/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font: 16px/1.5 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   background: var(--ground-sunk); border: 1px solid var(--line); border-radius: 6px;
   padding: 1px 7px; color: var(--ink-mid); max-width: 100%; overflow-x: auto; white-space: nowrap;
   vertical-align: middle;
@@ -550,7 +550,7 @@ h3 { margin: 0; color: var(--ink-head); font-size: 20px; line-height: 1.35; font
 .peek-clip { height: clamp(180px, 28vw, 380px); overflow: hidden; }
 
 /* ---------- footer ---------- */
-.foot { padding: 48px 0 56px; border-top: 1px solid var(--line); font-size: 15px; color: var(--ink-faint); }
+.foot { padding: 48px 0 56px; border-top: 1px solid var(--line); font-size: 16px; color: var(--ink-faint); }
 .foot .wrap { display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; }
 .foot nav { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-inline-start: auto; }
 .foot a { color: var(--ink-faint); }
@@ -570,8 +570,8 @@ h3 { margin: 0; color: var(--ink-head); font-size: 20px; line-height: 1.35; font
   background: var(--paper-yellow); color: #4D421A;
   border-radius: var(--r-lg); font-weight: 600;
 }
-.legal .meta { color: var(--ink-faint); font-size: 15px; margin-top: 8px; }
-.legal table { border-collapse: collapse; width: 100%; font-size: 15.5px; margin: 12px 0; }
+.legal .meta { color: var(--ink-faint); font-size: 16px; margin-top: 8px; }
+.legal table { border-collapse: collapse; width: 100%; font-size: 16px; margin: 12px 0; }
 .legal th, .legal td { text-align: start; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .legal th { color: var(--ink-head); font-weight: 600; }
 .table-scroll { overflow-x: auto; }
