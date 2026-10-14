@@ -44,6 +44,9 @@
           <a class="btn btn-lg btn-primary" href="https://get.microsoft.com/installer/download/9P688NX68S8Q?referrer=appbadge&amp;source=wonder-pages.com">להורדה לווינדוס</a>
         </div>
         <p class="start-steps">פותחים את הקובץ שירד, והוא מתקין את וונדר ופותח אותה. הקובץ חתום אצל מיקרוסופט, ולכן אין אזהרה. אם במקום זה נפתחת החנות של מיקרוסופט, היא תהיה על הדף של <span class="ltr">Wonder Pages</span>: לוחצים שם על כפתור ההתקנה.</p>
+        <!-- The backup (Amir, 2026-10-14): our own installer straight from the releases, no Store at all. It is not
+             signed, so Windows asks before running it; the line says which two presses get past that (assets/start.js). -->
+        <p class="start-steps" id="win-direct">לא הסתדר? <a data-exe href="https://github.com/Wonder-App/wonder-releases/releases/latest">להורדה ישירה של קובץ ההתקנה</a>. ווינדוס ישאל אם להפעיל אותו: לוחצים &quot;מידע נוסף&quot; ואז &quot;הפעל בכל זאת&quot;.</p>
       </div>
 
       <!-- N76 d: from the welcome mail (#key=…&name=…), after installing: one press opens

@@ -8,7 +8,7 @@
  * Other   -> says it is a computer app and shows both buttons.
  *
  * Every state keeps a clickable link on the page, so a blocked or failed download never leaves a dead end.
- * The pure parts (pickPlatform, pickDmg) are exported for tests/siteStart.spec.ts.
+ * The pure parts (pickPlatform, pickDmg, pickExe) are exported for tests/siteStart.spec.ts.
  */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) module.exports = factory()
@@ -35,6 +35,16 @@
     var assets = (release && release.assets) || []
     for (var i = 0; i < assets.length; i++) {
       if (/^Wonder-[\d.]+\.dmg$/.test(assets[i].name) && assets[i].browser_download_url) return assets[i].browser_download_url
+    }
+    return null
+  }
+
+  // The download URL of our own Windows installer (Wonder-Setup-<version>.exe) in the same response, or null.
+  // It is the backup under the Windows button (Amir, 2026-10-14), for a PC where Microsoft's file does not work.
+  function pickExe(release) {
+    var assets = (release && release.assets) || []
+    for (var i = 0; i < assets.length; i++) {
+      if (/^Wonder-Setup-[\d.]+\.exe$/.test(assets[i].name) && assets[i].browser_download_url) return assets[i].browser_download_url
     }
     return null
   }
@@ -74,6 +84,14 @@
       // Only skip the automatic start for a forced preview (?os=windows&nostart=1).
       $('status-win').textContent = 'ההורדה התחילה. אם לא, לחצו על הכפתור.'
       if (!q.get('nostart')) win.location.assign(WIN_INSTALLER)
+      // The backup link points at the releases page until the newest .exe is known.
+      win.fetch(RELEASES_API, { headers: { Accept: 'application/vnd.github+json' } })
+        .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json() })
+        .then(function (release) {
+          var url = pickExe(release)
+          if (url) [].slice.call(doc.querySelectorAll('[data-exe]')).forEach(function (a) { a.href = url })
+        })
+        .catch(function () {})
       return
     }
     if (platform !== 'mac') return
@@ -97,5 +115,5 @@
 
   if (typeof document !== 'undefined' && document.getElementById('p-mac')) run(document, window)
 
-  return { pickPlatform: pickPlatform, pickDmg: pickDmg, activationLink: activationLink, WIN_INSTALLER: WIN_INSTALLER, RELEASES_PAGE: RELEASES_PAGE }
+  return { pickPlatform: pickPlatform, pickDmg: pickDmg, pickExe: pickExe, activationLink: activationLink, WIN_INSTALLER: WIN_INSTALLER, RELEASES_PAGE: RELEASES_PAGE }
 })
