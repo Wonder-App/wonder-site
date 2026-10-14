@@ -2,7 +2,9 @@
  * site/assets/start.js — the "start" page: picks the right download for the visitor's computer.
  *
  * Mac     -> asks GitHub for the newest Wonder-<version>.dmg and starts the download by itself.
- * Windows -> the Microsoft Store page (the Store is the only Windows route: no SmartScreen notice).
+ * Windows -> Microsoft's own installer file (the Store's Web Installer, signed by Microsoft) and starts it by
+ *            itself: no Store to learn, no SmartScreen notice (N178). If the PC fails a check, the file opens
+ *            the Store on Wonder's page itself.
  * Other   -> says it is a computer app and shows both buttons.
  *
  * Every state keeps a clickable link on the page, so a blocked or failed download never leaves a dead end.
@@ -12,7 +14,8 @@
   if (typeof module === 'object' && module.exports) module.exports = factory()
   else root.WonderStart = factory()
 })(typeof self !== 'undefined' ? self : this, function () {
-  var STORE_WEB = 'https://apps.microsoft.com/detail/9P688NX68S8Q'
+  // The URL Microsoft's own badge builds in its "Direct" mode (microsoft/app-store-badge, getPSIUrl).
+  var WIN_INSTALLER = 'https://get.microsoft.com/installer/download/9P688NX68S8Q?referrer=appbadge&source=wonder-pages.com'
   var RELEASES_API = 'https://api.github.com/repos/Wonder-App/wonder-releases/releases/latest'
   var RELEASES_PAGE = 'https://github.com/Wonder-App/wonder-releases/releases/latest'
 
@@ -67,6 +70,12 @@
       $('p-key').hidden = false
     }
 
+    if (platform === 'windows') {
+      // Only skip the automatic start for a forced preview (?os=windows&nostart=1).
+      $('status-win').textContent = 'ההורדה התחילה. אם לא, לחצו על הכפתור.'
+      if (!q.get('nostart')) win.location.assign(WIN_INSTALLER)
+      return
+    }
     if (platform !== 'mac') return
     var links = [].slice.call(doc.querySelectorAll('[data-dmg]'))
     status.textContent = 'מכינים את ההורדה...'
@@ -88,5 +97,5 @@
 
   if (typeof document !== 'undefined' && document.getElementById('p-mac')) run(document, window)
 
-  return { pickPlatform: pickPlatform, pickDmg: pickDmg, activationLink: activationLink, STORE_WEB: STORE_WEB, RELEASES_PAGE: RELEASES_PAGE }
+  return { pickPlatform: pickPlatform, pickDmg: pickDmg, activationLink: activationLink, WIN_INSTALLER: WIN_INSTALLER, RELEASES_PAGE: RELEASES_PAGE }
 })
