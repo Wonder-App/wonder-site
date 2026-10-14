@@ -2,9 +2,8 @@
  * site/assets/start.js — the "start" page: picks the right download for the visitor's computer.
  *
  * Mac     -> asks GitHub for the newest Wonder-<version>.dmg and starts the download by itself.
- * Windows -> Microsoft's own installer file (the Store's Web Installer, signed by Microsoft) and starts it by
- *            itself: no Store to learn, no SmartScreen notice (N178). If the PC fails a check, the file opens
- *            the Store on Wonder's page itself.
+ * Windows -> two buttons, nothing starts by itself: "from the Store" (Microsoft's own installer file, signed by
+ *            Microsoft, no SmartScreen notice; N178) and "direct" (our newest Wonder-Setup-<version>.exe; N193).
  * Other   -> says it is a computer app and shows both buttons.
  *
  * Every state keeps a clickable link on the page, so a blocked or failed download never leaves a dead end.
@@ -73,7 +72,7 @@
     var panels = { mac: $('p-mac'), windows: $('p-windows'), other: $('p-other') }
     Object.keys(panels).forEach(function (k) { panels[k].hidden = k !== platform })
     doc.documentElement.setAttribute('data-platform', platform)
-    if (platform !== 'other') $('alt-title').textContent = 'ההורדה לא התחילה, או שזה לא המחשב שלכם?'
+    if (platform === 'mac') $('alt-title').textContent = 'ההורדה לא התחילה, או שזה לא המחשב שלכם?'
     var opener = activationLink(win.location.hash)
     if (opener && platform !== 'other' && $('p-key')) {
       $('open-wonder').href = opener
@@ -81,10 +80,7 @@
     }
 
     if (platform === 'windows') {
-      // Only skip the automatic start for a forced preview (?os=windows&nostart=1).
-      $('status-win').textContent = 'ההורדה התחילה. אם לא, לחצו על הכפתור.'
-      if (!q.get('nostart')) win.location.assign(WIN_INSTALLER)
-      // The backup link points at the releases page until the newest .exe is known.
+      // The writer picks; the direct button points at the releases page until the newest .exe is known.
       win.fetch(RELEASES_API, { headers: { Accept: 'application/vnd.github+json' } })
         .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json() })
         .then(function (release) {
