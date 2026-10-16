@@ -2,8 +2,8 @@
  * site/assets/start.js — the "start" page: picks the right download for the visitor's computer.
  *
  * Mac     -> asks GitHub for the newest Wonder-<version>.dmg and starts the download by itself.
- * Windows -> one button, nothing starts by itself: Microsoft's own installer file (signed by Microsoft, no
- *            SmartScreen notice; N178). Our unsigned Wonder-Setup-<version>.exe is never offered (Amir, 2026-10-16).
+ * Windows -> one button, nothing starts by itself: Wonder's page in the Microsoft Store (Amir, 2026-10-16; no file
+ *            is downloaded from the site, neither ours nor Microsoft's small installer).
  * Other   -> says it is a computer app and shows both buttons.
  *
  * Every state keeps a clickable link on the page, so a blocked or failed download never leaves a dead end.
@@ -13,8 +13,8 @@
   if (typeof module === 'object' && module.exports) module.exports = factory()
   else root.WonderStart = factory()
 })(typeof self !== 'undefined' ? self : this, function () {
-  // The URL Microsoft's own badge builds in its "Direct" mode (microsoft/app-store-badge, getPSIUrl).
-  var WIN_INSTALLER = 'https://get.microsoft.com/installer/download/9P688NX68S8Q?referrer=appbadge&source=wonder-pages.com'
+  // Wonder's page in the Microsoft Store.
+  var WIN_INSTALLER = 'https://apps.microsoft.com/detail/9P688NX68S8Q'
   var RELEASES_API = 'https://api.github.com/repos/Wonder-App/wonder-releases/releases/latest'
   var RELEASES_PAGE = 'https://github.com/Wonder-App/wonder-releases/releases/latest'
 
