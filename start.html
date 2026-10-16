@@ -45,14 +45,13 @@
         <p class="start-steps">פותחים את הקובץ שירד וגוררים את וונדר לתיקיית האפליקציות. הגרסה חתומה ומאושרת אצל אפל, ולכן אין אזהרה.</p>
       </div>
 
-      <!-- Windows: two plain choices (Amir, 2026-10-14: "צריך להיות פשוט"). The Store one is Microsoft's own small
-           installer file (signed by Microsoft, no warning; N178); the direct one is our own Wonder-Setup-<version>.exe,
-           which start.js resolves from the newest release (N193). -->
+      <!-- Windows: one button, Microsoft's own small installer file (signed by Microsoft, no warning; N178).
+           Our own Wonder-Setup-<version>.exe is not offered: it is not signed, so Windows shows its blue
+           "Windows protected your PC" warning (Amir, 2026-10-16, N193 reversed). -->
       <div id="p-windows" hidden>
         <h1>מורידים את וונדר לווינדוס</h1>
         <div class="cta-row">
-          <a class="btn btn-lg btn-primary" data-exe href="https://github.com/Wonder-App/wonder-releases/releases/latest"><svg aria-hidden="true"><use href="#i-download"/></svg>הורדה ישירה</a>
-          <a class="btn btn-lg" href="https://get.microsoft.com/installer/download/9P688NX68S8Q?referrer=appbadge&amp;source=wonder-pages.com"><svg aria-hidden="true"><use href="#i-store"/></svg>הורדה מהחנות</a>
+          <a class="btn btn-lg btn-primary" href="https://get.microsoft.com/installer/download/9P688NX68S8Q?referrer=appbadge&amp;source=wonder-pages.com"><svg aria-hidden="true"><use href="#i-download"/></svg>הורדה לווינדוס</a>
         </div>
       </div>
 
