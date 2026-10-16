@@ -47,8 +47,7 @@
       <a href="#price">מחיר</a>
       <a href="#faq">שאלות</a>
     </nav>
-    <a class="btn" href="https://tally.so/r/LZQZQv">הצטרפות לבטא</a>
-  </div>
+    <a class="btn" href="https://tally.so/r/LZQZQv">הצטרפות לבטא</a>      </div>
 </header>
 
 <main id="main">
@@ -66,10 +65,8 @@
           <span class="rule" aria-hidden="true"></span>
         </div>
         <div class="cta-row">
-          <a class="btn btn-lg btn-primary" href="https://tally.so/r/LZQZQv">הצטרפות לבטא</a>
-        </div>
-        <p class="cta-note">חינם בתקופת הבטא. ההצטרפות בהזמנה. <a href="#faq-install">איך מתקינים</a></p>
-        <p class="say"><span class="ph">מקום שקט</span> <span class="ph">לכתוב בו תסריט.</span></p>
+          <a class="btn btn-lg btn-primary" href="https://tally.so/r/LZQZQv">הצטרפות לבטא</a>                  </div>
+        <p class="cta-note">חינם בתקופת הבטא. ההצטרפות בהזמנה. <a href="#faq-install">איך מתקינים</a></p>                <p class="say"><span class="ph">מקום שקט</span> <span class="ph">לכתוב בו תסריט.</span></p>
         <p class="lede">נכתבה על ידי תסריטאים. התסריט מ־Word בא איתך.</p>
         <ul class="by">
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>עברית מימין לשמאל, בכל מקום</li>
@@ -99,7 +96,7 @@
       <div class="explode">
         <figure class="float ex-base"><img src="assets/e-editor.webp" width="2000" height="1250" loading="lazy" alt="חלון וונדר: עמוד תסריט בעברית, והסמן עומד על כותרת הסצנה הראשונה."></figure>
         <div class="ex-item">
-          <figure class="ex-part ex-cut ex-cycle" style="--x:73%;--y:27%;--w:5%;--mw:39px;--n:5;--pop:1.14;--from:0.84"><img src="assets/x-mark-0.webp" width="90" height="90" loading="lazy" alt="סמן השורה, שמתחלף לפי סוג השורה: כותרת סצנה, תיאור, שם דמות, הנחיה, דיאלוג." style="--i:0"><img src="assets/x-mark-1.webp" width="90" height="90" loading="lazy" alt="" style="--i:1"><img src="assets/x-mark-2.webp" width="90" height="90" loading="lazy" alt="" style="--i:2"><img src="assets/x-mark-3.webp" width="90" height="90" loading="lazy" alt="" style="--i:3"><img src="assets/x-mark-4.webp" width="90" height="90" loading="lazy" alt="" style="--i:4"></figure>
+          <figure class="ex-part ex-cut ex-cycle" style="--x:73%;--y:27%;--w:5%;--mw:39px;--n:5;--pop:1.14;--from:0.84"><img src="assets/x-mark-0.webp" width="90" height="90" loading="lazy" alt="סמן השורה, שמתחלף לפי סוג השורה: כותרת סצנה, פעולה, שם דמות, הנחיה, דיאלוג." style="--i:0"><img src="assets/x-mark-1.webp" width="90" height="90" loading="lazy" alt="" style="--i:1"><img src="assets/x-mark-2.webp" width="90" height="90" loading="lazy" alt="" style="--i:2"><img src="assets/x-mark-3.webp" width="90" height="90" loading="lazy" alt="" style="--i:3"><img src="assets/x-mark-4.webp" width="90" height="90" loading="lazy" alt="" style="--i:4"></figure>
           <p class="ex-label ex-right" style="--x:82%;--y:27%;--w:18%"><b>סמן השורה</b><span>מתחלף לבד לפי השורה.</span></p>
         </div>
         <div class="ex-item">
@@ -107,6 +104,11 @@
           <p class="ex-label ex-right" style="--x:82%;--y:56%;--w:18%"><b>לחיצה משנה סוג</b><span>כל סוג עם המספר שלו.</span></p>
         </div>
       </div>
+      <!-- A7 (2026-10-14): the demos above loop; one press stops every loop on the page on its first state -->
+      <div class="still-row"><button type="button" class="still-toggle" id="still-toggle" aria-pressed="false" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <span>עצירת תנועה</span>
+      </button></div>
     </div>
   </section>
 
@@ -123,7 +125,7 @@
         </div>
       </div>
 
-      <div class="from" id="from-word" role="tabpanel" aria-labelledby="tab-word">
+      <div class="from" id="from-word" role="tabpanel" aria-labelledby="tab-word" tabindex="0">
         <div>
           <h3><span class="ph">התסריט מ־Word</span> <span class="ph">נפתח כמו שהוא.</span></h3>
           <p>גוררים את הקובץ פנימה, והתוכנה מזהה לבד כותרת סצנה, דמות ודיאלוג.</p>
@@ -144,7 +146,7 @@
         </div>
       </div>
 
-      <div class="from" id="from-fd" role="tabpanel" aria-labelledby="tab-fd">
+      <div class="from" id="from-fd" role="tabpanel" aria-labelledby="tab-fd" tabindex="0">
         <div>
           <h3><span class="ph">הכללים של Final Draft,</span> <span class="ph">בעברית אמיתית.</span></h3>
           <ul class="points">
@@ -155,7 +157,7 @@
         </div>
         <div class="from-plain">
           <figure class="float menu-card">
-            <img src="assets/ui-page-menu.webp" width="1500" height="585" loading="lazy" alt="עמוד תסריט בעברית בוונדר, ולצדו תפריט סוגי השורות: כותרת סצנה, תיאור, שם דמות, הנחיה, דיאלוג ומעבר, כל אחד עם קיצור מקלדת.">
+            <img src="assets/ui-page-menu.webp" width="1500" height="585" loading="lazy" alt="עמוד תסריט בעברית בוונדר, ולצדו תפריט סוגי השורות: כותרת סצנה, פעולה, שם דמות, הנחיה, דיאלוג ומעבר, כל אחד עם קיצור מקלדת.">
           </figure>
         </div>
       </div>
@@ -300,7 +302,7 @@
   <section class="price-band" id="price" aria-labelledby="price-title">
     <div class="wrap">
       <div class="price-grid">
-        <div>
+                <div>
           <h2 id="price-title"><span class="ph">בתקופת הבטא,</span> <span class="ph">וונדר בחינם.</span></h2>
           <span class="tag">מחיר יפורסם בקרוב</span>
           <p>לפני הגרסה בתשלום תהיה תקופת ניסיון, ונודיע מראש.</p>
@@ -310,7 +312,7 @@
           </ul>
           <a class="btn btn-lg btn-cream" href="https://tally.so/r/LZQZQv">להצטרפות לבטא</a>
         </div>
-        <div class="books" aria-hidden="true">
+                        <div class="books" aria-hidden="true">
           <figure class="book book-1"><img src="assets/ui-book-1.webp" width="299" height="408" loading="lazy" alt=""></figure>
           <figure class="book book-2"><img src="assets/ui-book-2.webp" width="301" height="403" loading="lazy" alt=""></figure>
           <figure class="book book-3"><img src="assets/ui-book-3.webp" width="299" height="402" loading="lazy" alt=""></figure>
@@ -389,10 +391,8 @@
     <div class="wrap">
       <img class="closing-mark ill" src="assets/art/door.webp" alt="" width="73" height="120" loading="lazy">
       <h2 id="closing-title"><span class="ph">העמוד הבא שלך</span> <span class="ph">מחכה.</span></h2>
-      <p>חינם בתקופת הבטא. ההצטרפות בהזמנה.</p>
-      <div class="cta-row">
-        <a class="btn btn-lg btn-primary" href="https://tally.so/r/LZQZQv">הצטרפות לבטא</a>
-      </div>
+      <p>חינם בתקופת הבטא. ההצטרפות בהזמנה.</p>            <div class="cta-row">
+        <a class="btn btn-lg btn-primary" href="https://tally.so/r/LZQZQv">הצטרפות לבטא</a>              </div>
       <div class="peek peek-clip" aria-hidden="true">
         <figure class="float">
           <img src="assets/ui-editor.webp" width="2000" height="1250" loading="lazy" alt="">
@@ -438,11 +438,29 @@
       // RTL: ArrowLeft moves to the next tab, ArrowRight to the previous one.
       var d = e.key === 'ArrowLeft' ? 1 : e.key === 'ArrowRight' ? -1 : 0;
       if (d) { e.preventDefault(); select(tabs[(i + d + tabs.length) % tabs.length], true); }
+      // Home / End: the first and the last tab (A19).
+      if (e.key === 'Home' || e.key === 'End') { e.preventDefault(); select(tabs[e.key === 'Home' ? 0 : tabs.length - 1], true); }
     });
   });
   select(tabs[0]);
 
   var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // A7: the loops stop for whoever asks, and stay stopped on this browser (nothing to stop under reduced motion).
+  var still = document.getElementById('still-toggle');
+  if (still && !calm) {
+    var setStill = function (on) {
+      document.documentElement.classList.toggle('still', on);
+      still.setAttribute('aria-pressed', on ? 'true' : 'false');
+      still.querySelector('span').textContent = on ? 'הפעלת תנועה' : 'עצירת תנועה';
+      try { localStorage.setItem('wonder.still', on ? '1' : ''); } catch (e) {}
+    };
+    var was = false;
+    try { was = localStorage.getItem('wonder.still') === '1'; } catch (e) {}
+    still.hidden = false;
+    setStill(was);
+    still.addEventListener('click', function () { setStill(!document.documentElement.classList.contains('still')); });
+  }
 
   // Light entrances: things settle into place as they scroll into view. Without JS, or with
   // reduced motion, nothing is hidden and nothing moves.
