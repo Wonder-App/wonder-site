@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="assets/site.css">
 <script>document.documentElement.classList.add('js')</script>
 <script src="assets/intro.js"></script>
+<script src="assets/again.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">דלג לתוכן</a>
@@ -40,9 +41,9 @@
       <img class="logo" src="assets/logo.svg" alt="Wonder" width="119" height="26">
     </a>
     <nav class="nav" aria-label="ניווט ראשי">
+      <a href="#features">יכולות</a>
       <a href="#from">עוברים לוונדר</a>
       <a href="#ideas">רעיונות</a>
-      <a href="#tools">כלים</a>
       <a href="#share">שיתוף</a>
       <a href="#price">מחיר</a>
       <a href="#faq">שאלות</a>
@@ -66,7 +67,13 @@
         </div>
         <div class="cta-row">
           <a class="btn btn-lg btn-primary" href="https://tally.so/r/LZQZQv">הצטרפות לבטא</a>                  </div>
-        <p class="cta-note">חינם בתקופת הבטא. ההצטרפות בהזמנה. <a href="#faq-install">איך מתקינים</a></p>                <p class="say"><span class="ph">מקום שקט</span> <span class="ph">לכתוב בו תסריט.</span></p>
+        <p class="cta-note">חינם בתקופת הבטא, פתוח ל־100 הכותבים הראשונים. <a href="#faq-install">איך מתקינים</a><span class="again-at"> · <a href="mailto:support@wonder-pages.com" data-again aria-controls="again" aria-expanded="false">כבר נרשמתם?</a></span></p>
+        <!-- N258: the welcome mail again, by address; the page never says who signed up (assets/again.js). -->
+        <form class="again" id="again" hidden dir="rtl" novalidate aria-label="לקבל שוב את מייל ההצטרפות">
+          <label for="again-email">המייל שאיתו נרשמתם. נשלח אליו שוב את ההורדה ואת המפתח.</label>
+          <span class="again-row"><input id="again-email" type="email" dir="ltr" autocomplete="email" inputmode="email" maxlength="254" spellcheck="false" required><button type="submit" class="btn">לשלוח שוב</button></span>
+          <p class="again-said" role="status" aria-live="polite"></p>
+        </form>                <p class="say"><span class="ph">מקום שקט</span> <span class="ph">לכתוב בו תסריט.</span></p>
         <p class="lede">נכתבה על ידי תסריטאים. התסריט מ־Word בא איתך.</p>
         <ul class="by">
           <li><svg aria-hidden="true"><use href="#i-check"/></svg>עברית מימין לשמאל, בכל מקום</li>
@@ -112,6 +119,80 @@
     </div>
   </section>
 
+  <!-- ============ what's in Wonder (N321): four screens taken apart, the way the ideas section is (TASTE 2026-10-08).
+       Each window and each part is the built app (tests/siteShots.spec.ts → tools/site-preview/cut.cjs). ============ -->
+  <section id="features" class="features" aria-labelledby="features-title">
+    <div class="wrap">
+      <div class="sect-head center">
+        <h2 id="features-title"><span class="ph">מה שתסריטאי צריך.</span> <span class="ph">בלי מה שמפריע.</span></h2>
+      </div>
+
+      <div class="feature" id="f-page">
+        <div class="sect-head center">
+          <h3 data-feature="quiet"><span class="ph">כשכותבים,</span> <span class="ph">נשאר רק הדף.</span></h3>
+          <p>כל מה שמסביב נמוג לאט. <span data-feature="rtl">עברית מימין לשמאל</span>, <span data-feature="pages">והעמודים נשברים כמו בוורד</span>.</p>
+        </div>
+        <div class="explode">
+          <figure class="float ex-base"><img src="assets/f-page.webp" width="2000" height="1250" loading="lazy" decoding="async" alt="וונדר בזמן כתיבה: רק דף התסריט, בלי סרגלים ובלי כפתורים."></figure>
+          <div class="ex-item">
+            <figure class="ex-part ex-cut ex-slip" style="--x:30%;--y:36%;--w:44%;--mw:542px"><img src="assets/f-page-dual.webp" width="1083" height="139" loading="lazy" decoding="async" alt="סבתא רחל ומיכל מדברות יחד, בשתי עמודות: ״לא ישנת.״ ו״ישנתי קצת.״"></figure>
+            <p class="ex-label ex-right" style="--x:82%;--y:33%;--w:18%" data-feature="dual"><b>דיאלוג כפול</b><span>שתי דמויות מדברות באותו רגע.</span></p>
+          </div>
+          <div class="ex-item">
+            <figure class="ex-part ex-cut" style="--x:9%;--y:60%;--w:20%;--mw:272px"><img src="assets/f-page-alts.webp" width="418" height="200" loading="lazy" decoding="async" alt="התפריט של שורה עם גרסאות: ״שמור גרסה חלופית״, ומתחת שתי הגרסאות שנשמרו."></figure>
+            <p class="ex-label ex-left" style="--x:0%;--y:84%;--w:22%" data-feature="alts"><b>גרסאות לשורה</b><span>שומרים את הגרסה הקודמת, והסימן בשוליים פותח את כולן.</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature" id="f-story">
+        <div class="sect-head center">
+          <h3 data-feature="story"><span class="ph">הסיפור</span> <span class="ph">ליד התסריט.</span></h3>
+          <p>כותבים את הסיפור בכתיבה חופשית, ולחיצה הופכת אותו לטריטמנט.</p>
+        </div>
+        <div class="explode">
+          <figure class="float ex-base"><img src="assets/f-story.webp" width="2000" height="1250" loading="lazy" decoding="async" alt="דף התסריט בוונדר, ולצדו כרטיס הטריטמנט."></figure>
+          <div class="ex-item">
+            <figure class="ex-part ex-cut" style="--x:56%;--y:2%;--w:24%;--mw:300px"><img src="assets/f-story-card.webp" width="552" height="691" loading="lazy" decoding="async" alt="כרטיס הטריטמנט: חלק 2 מתוך 4, ״החוף״, השורות שלו, והסצנה שנכתבה ממנו."></figure>
+            <p class="ex-label ex-right" style="--x:82%;--y:22%;--w:18%"><b>הטריטמנט בצד</b><span>החלק שכותבים עכשיו, והסצנות שלו.</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature" id="f-rewrite">
+        <div class="sect-head center">
+          <h3 data-feature="history"><span class="ph">משכתבים</span> <span class="ph">בלי לפחד.</span></h3>
+          <p>כל שינוי נשמר, ואפשר לחזור לכל רגע.</p>
+        </div>
+        <div class="explode">
+          <figure class="float ex-base"><img src="assets/f-history.webp" width="2000" height="1250" loading="lazy" decoding="async" alt="וונדר מראה רגע מההיסטוריה בשם ״לפני השכתוב״, והדף מסמן מה השתנה מאז."></figure>
+          <div class="ex-item">
+            <figure class="ex-part ex-cut" style="--x:15%;--y:0%;--w:27%;--mw:348px"><img src="assets/f-history-card.webp" width="696" height="506" loading="lazy" decoding="async" alt="כרטיס ההיסטוריה: הרגע ״לפני השכתוב״, ״7 מקומות השתנו מאז״, וכפתור ״שחזר את הגרסה הזו״."></figure>
+            <p class="ex-label ex-left" style="--x:0%;--y:46%;--w:16%"><b>רגע מההיסטוריה</b><span>כמה מקומות השתנו מאז, וחזרה בלחיצה.</span></p>
+          </div>
+          <div class="ex-item">
+            <figure class="ex-part ex-cut ex-slip" style="--x:50%;--y:62%;--w:27%;--mw:300px"><img src="assets/f-history-line.webp" width="506" height="64" loading="lazy" decoding="async" alt="שורת דיאלוג מהתסריט: המילה ״כבר״ מסומנת בקו חוצה, וסימן קטן מראה שנכתבה שם מילה אחרת."></figure>
+            <p class="ex-label ex-right" style="--x:82%;--y:60%;--w:18%"><b>על הדף עצמו</b><span>מה שנמחק מסומן בקו, ומה שנכתב בסימן קטן.</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature" id="f-find">
+        <div class="sect-head center">
+          <h3 data-feature="search"><span class="ph">מבקשים</span> <span class="ph">במילים שלכם.</span></h3>
+          <p>תיבה אחת לכל שורה, הגדרה ופעולה: <span class="ltr">⌘K</span> במק, <span class="ltr">Ctrl+K</span> בווינדוס.</p>
+        </div>
+        <div class="explode">
+          <figure class="float ex-base"><img src="assets/f-search.webp" width="2000" height="1250" loading="lazy" decoding="async" alt="תיבת החיפוש של וונדר פתוחה מעל הדף."></figure>
+          <div class="ex-item">
+            <figure class="ex-part ex-cut" style="--x:30%;--y:6%;--w:40%;--mw:620px"><img src="assets/f-search-box.webp" width="1240" height="647" loading="lazy" decoding="async" alt="בתיבת החיפוש כתוב ״תקריא לי את הסצנה״. התוצאה הראשונה היא הפעולה ״הקראת הסצנה״, ומתחתיה שורות מהתסריט."></figure>
+            <p class="ex-label ex-right" style="--x:82%;--y:30%;--w:18%" data-feature="read-aloud"><b>״תקריא לי את הסצנה״</b><span>והפעולה הראשונה היא הקראת הסצנה.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ from Word / from Final Draft ============ -->
   <section id="from" aria-labelledby="from-title">
     <div class="wrap">
@@ -127,11 +208,11 @@
 
       <div class="from" id="from-word" role="tabpanel" aria-labelledby="tab-word" tabindex="0">
         <div>
-          <h3><span class="ph">התסריט מ־Word</span> <span class="ph">נפתח כמו שהוא.</span></h3>
+          <h3 data-feature="import"><span class="ph">התסריט מ־Word</span> <span class="ph">נפתח כמו שהוא.</span></h3>
           <p>גוררים את הקובץ פנימה, והתוכנה מזהה לבד כותרת סצנה, דמות ודיאלוג.</p>
           <ul class="points">
             <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>שום שורה לא נעלמת</b><span>שורה לא ברורה מסומנת לבדיקה.</span></div></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>אפשר תמיד לחזור ל־Word</b><span>ייצוא ל־Word ול־PDF, באותו עימוד.</span></div></li>
+            <li data-feature="export"><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>אפשר תמיד לחזור ל־Word</b><span>ייצוא ל־Word ול־PDF, באותו עימוד.</span></div></li>
           </ul>
         </div>
         <div class="stage stage-mint">
@@ -152,7 +233,7 @@
           <ul class="points">
             <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>המקשים שהידיים שלך מכירות</b><span>Enter ו־Tab, כמו ב־Final Draft.</span></div></li>
             <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>עמוד הוא דקה</b><span>(המשך) נוסף לבד, והריווח זהה.</span></div></li>
-            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>קובצי ‎.fdx</b><span>נפתחים ישירות, ומיוצאים בחזרה.</span></div></li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>קובצי ‎.fdx ו־Fountain</b><span>נפתחים בוונדר, ומיוצאים בחזרה.</span></div></li>
           </ul>
         </div>
         <div class="from-plain">
@@ -170,7 +251,7 @@
       <img class="ill ill-side" src="assets/art/change.webp" alt="" width="254" height="150" loading="lazy">
       <div class="sect-head ideas-head">
         <p class="kicker">מבלגן לסדר</p>
-        <h2 id="ideas-title"><span class="ph">רעיון עולה באמצע סצנה.</span> <span class="ph">הוא לא הולך לאיבוד.</span></h2>
+        <h2 id="ideas-title" data-feature="notes"><span class="ph">רעיון עולה באמצע סצנה.</span> <span class="ph">הוא לא הולך לאיבוד.</span></h2>
       </div>
       <div class="explode">
         <figure class="float ex-base"><img src="assets/e-notes.webp" width="2000" height="1250" loading="lazy" alt="עמוד תסריט בוונדר ולצדו סרגל הפתקים."></figure>
@@ -185,6 +266,29 @@
         <div class="ex-item">
           <div class="ex-part ex-device" style="--x:19%;--y:8%;--w:15.5%"><figure class="device device-phone"><span class="screen"><span class="sb" style="background-color:#F4E8B8"></span><img src="assets/t-phone-idea.webp" width="1170" height="2391" loading="lazy" alt="טלפון ועליו דף הרעיונות של וונדר, עם רעיון אחד שנכתב בדרך."></span></figure></div>
           <p class="ex-label ex-left" style="--x:0%;--y:38%;--w:18%"><b>רעיון מהטלפון</b><span>נכתב בדרך, מחכה בתסריט.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ the phone app (N321): Wonder Ideas in the App Store, on its Israeli page (src/readers/phoneApp.ts).
+       No Apple badge: its artwork may not be redrawn or localized by us (Apple's marketing guidelines), and the
+       official file could not be fetched; a text link names the App Store in English, as the guidelines ask.
+       The QR is made from the same address (tools/site-preview/qr.cjs; tests/siteFeatures.spec.ts). ============ -->
+  <section id="phone" class="phone-band" aria-labelledby="phone-title">
+    <div class="wrap">
+      <!-- the phone itself is shown just above, in the ideas section: this band is the way to get it, nothing more -->
+      <div class="phone-grid">
+        <img class="phone-icon" src="assets/ideas-icon.webp" width="256" height="256" loading="lazy" decoding="async" alt="הסמל של וונדר לאייפון">
+        <div class="phone-copy">
+          <p class="kicker">וונדר לאייפון <span class="ltr">(Wonder Ideas)</span></p>
+          <h2 id="phone-title" data-feature="phone"><span class="ph">רעיון בדרך?</span> <span class="ph">הוא מחכה במחשב.</span></h2>
+          <p>כותבים בטלפון, והרעיון מחכה בפתקים של הפרויקט בוונדר.</p>
+          <div class="phone-get">
+            <a class="btn btn-lg" href="https://apps.apple.com/il/app/wonder-ideas/id6822424237" data-store><span>להורדה מה־<span class="ltr">App Store</span></span></a>
+            <span class="phone-qr" data-qr="https://apps.apple.com/il/app/wonder-ideas/id6822424237"><img src="assets/ideas-qr.svg" width="132" height="132" loading="lazy" decoding="async" alt="קוד QR לדף של וונדר לאייפון ב־App Store"><span>או סורקים במצלמה</span></span>
+          </div>
+          <p class="phone-note">מתחברים פעם אחת, מכרטיס הטלפון שבפתקים של וונדר.</p>
         </div>
       </div>
     </div>
@@ -254,47 +358,6 @@
           <p class="ex-label"><b>ההערות חוזרות לתסריט</b><span>על המילים שהקורא סימן.</span></p>
         </li>
       </ol>
-    </div>
-  </section>
-
-  <!-- ============ features ============ -->
-  <section id="features" aria-labelledby="features-title">
-    <div class="wrap has-ill">
-      <img class="ill ill-side" src="assets/art/typing.webp" alt="" width="159" height="150" loading="lazy">
-      <div class="sect-head">
-        <h2 id="features-title"><span class="ph">מה שתסריטאי צריך.</span> <span class="ph">בלי מה שמפריע.</span></h2>
-      </div>
-      <div class="bento bento-3">
-        <article class="tile tile-blue">
-          <span class="ico ico-letter" aria-hidden="true">א</span>
-          <h3>עברית קודם כול</h3>
-          <p>מימין לשמאל בכל מסך, עם בדיקת איות.</p>
-        </article>
-        <article class="tile tile-yellow">
-          <span class="ico" aria-hidden="true"><svg><use href="#i-pages"/></svg></span>
-          <h3>עימוד כמו בתעשייה</h3>
-          <p>מה שעל המסך הוא מה שיודפס.</p>
-        </article>
-        <article class="tile tile-peach">
-          <span class="ico" aria-hidden="true"><svg><use href="#i-export"/></svg></span>
-          <h3>PDF ו־Word בלחיצה</h3>
-          <p>עם עמוד שער ומספרי סצנות.</p>
-        </article>
-        <article class="tile tile-mint tile-wide">
-          <div>
-            <span class="ico" aria-hidden="true"><svg><use href="#i-more"/></svg></span>
-            <h3>ועוד</h3>
-          </div>
-          <ul class="also">
-            <li>שמירה אוטומטית וגיבויים</li>
-            <li>טיוטות ונקודות שמירה</li>
-            <li>חיפוש והחלפה</li>
-            <li>דיאלוג כפול וסוגי שורה משלך</li>
-            <li>נתוני תסריט: עמודים, דקות, סצנות</li>
-            <li>עדכונים שמגיעים לבד</li>
-          </ul>
-        </article>
-      </div>
     </div>
   </section>
 
@@ -391,7 +454,7 @@
     <div class="wrap">
       <img class="closing-mark ill" src="assets/art/door.webp" alt="" width="73" height="120" loading="lazy">
       <h2 id="closing-title"><span class="ph">העמוד הבא שלך</span> <span class="ph">מחכה.</span></h2>
-      <p>חינם בתקופת הבטא. ההצטרפות בהזמנה.</p>            <div class="cta-row">
+      <p>חינם בתקופת הבטא, פתוח ל־100 הכותבים הראשונים.</p>            <div class="cta-row">
         <a class="btn btn-lg btn-primary" href="https://tally.so/r/LZQZQv">הצטרפות לבטא</a>              </div>
       <div class="peek peek-clip" aria-hidden="true">
         <figure class="float">
@@ -472,7 +535,7 @@
       '.from > *',
       '.ex-base', '.ex-part', '.ex-label', '.flow-shot',
       '.note',
-      '.tile',
+      '.phone-icon', '.phone-copy > *',
       '.price-grid > *',
       '.book',
       '.faq-card',

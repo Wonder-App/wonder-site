@@ -174,7 +174,27 @@ a:hover { color: var(--ink-head); }
 .cta-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 36px; }
 @media (max-width: 520px) { .cta-row .btn-lg { width: 100%; max-width: 320px; } }
 .cta-note { margin: 16px 0 0; font-size: 16px; color: var(--ink-faint); }
-.cta-note a { color: inherit; }
+.cta-note a { color: inherit; white-space: nowrap; } /* a link never breaks in two on a phone ("איך / מתקינים") */
+
+/* "כבר נרשמתם?" (N258): a quiet text link in the note line opens one field under it. No new weight: the
+   small glass pill, the note's own size and ink, the field on the paper surface. */
+.again { margin: var(--s2) 0 0; max-width: 480px; font-size: 16px; color: var(--ink-faint); text-align: start; }
+.again[hidden] { display: none; }
+.start-alt .again { margin-inline: auto; }
+.again label { display: block; margin-bottom: var(--s1); line-height: 1.5; }
+.again-row { display: flex; gap: var(--s1); }
+.again input {
+  flex: 1; min-width: 0; height: 40px; padding: 0 16px;
+  border: 1px solid var(--line-strong); border-radius: 999px;
+  background: var(--surface-white); color: var(--ink-mid);
+  font: 400 16px/1 var(--ui-font); text-align: left;
+}
+.again input:focus-visible { outline: 2px solid var(--accent-ink); outline-offset: 2px; border-color: transparent; }
+.again .btn { flex: none; }
+.again .btn:disabled { opacity: .6; transform: none; cursor: default; }
+.again-said { margin: var(--s1) 0 0; min-height: 1.5em; line-height: 1.5; color: var(--ink); text-wrap: balance; } /* two even lines, never one word alone */
+.again-at { white-space: nowrap; }
+.again-said:empty { min-height: 0; }
 
 .hero-home { position: relative; isolation: isolate; background: var(--ground); text-align: start; padding-top: clamp(32px, 5vw, 72px); padding-bottom: 0; overflow: clip; }
 .hero-home .copy { position: relative; z-index: 1; max-width: 640px; }
@@ -496,55 +516,41 @@ h3 { margin: 0; color: var(--ink-head); font-size: 20px; line-height: 1.35; font
 .note-peach  { --n-bg: linear-gradient(168deg, #FCE6DA 0%, #F3D0BD 100%); --n-head: #7B4630; --n-body: #8A5640; }
 .note-violet { --n-bg: linear-gradient(168deg, #EFE8F7 0%, #DED1ED 100%); --n-head: #55446F; --n-body: #655280; }
 
-/* ---------- features: a bento of five tinted tiles, 40px apart ---------- */
-.bento { display: grid; gap: clamp(24px, 3.5vw, var(--s4)); margin-top: var(--s5); }
-@media (min-width: 720px) { .bento { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 720px) { .bento-3 { grid-template-columns: repeat(3, 1fr); } }
-@media (min-width: 1100px) { .bento-3 { margin-top: calc(var(--s5) + 40px); } }
-.tile {
-  position: relative;
-  padding: clamp(28px, 3.6vw, 48px);
-  border-radius: clamp(24px, 3vw, 36px);
-  background: var(--t-bg);
-  color: var(--t-body);
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, .75) inset,
-    0 0 0 1px var(--t-edge),
-    0 2px 4px var(--t-shadow),
-    0 22px 36px -22px var(--t-shadow-deep);
-}
-.tile::before {
-  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
-  background: radial-gradient(90% 70% at 80% 0%, rgba(255, 255, 255, .55), rgba(255, 255, 255, 0) 65%);
-}
-.tile > * { position: relative; }
-.tile .ico {
-  display: grid; place-items: center; width: 56px; height: 56px; margin-bottom: var(--s3);
-  border-radius: 18px;
-  color: var(--t-head);
-  background: linear-gradient(180deg, #FFFFFF, rgba(255, 255, 255, .62));
-  box-shadow: 0 1px 0 #fff inset, 0 0 0 1px rgba(255, 255, 255, .5), 0 8px 14px -6px var(--t-shadow-deep);
-}
-.tile .ico svg { width: 28px; height: 28px; }
-/* "Hebrew first" wears the real letter in the site face: a hand-drawn aleph never read as one (N75, 2026-10-08) */
-.tile .ico-letter { font-size: 31px; font-weight: 400; line-height: 1; padding-top: 2px; }
-.tile h3 { color: var(--t-head); font-size: clamp(24px, 2.6vw, 32px); font-weight: 500; letter-spacing: -.01em; }
-.tile p { margin: var(--s2) 0 0; font-size: 17px; line-height: 1.6; color: var(--t-body); max-width: 28em; text-wrap: pretty; }
-.tile-blue   { --t-bg: linear-gradient(170deg, #E8EEF8 0%, #D6E0F0 100%); --t-head: #3A5377; --t-body: #4E6486; --t-edge: rgba(58, 83, 119, .08); --t-shadow: rgba(58, 83, 119, .10); --t-shadow-deep: rgba(58, 83, 119, .30); }
-.tile-yellow { --t-bg: linear-gradient(170deg, #FAF1CD 0%, #F2E4A8 100%); --t-head: #6E5A1E; --t-body: #6E5A1E; --t-edge: rgba(110, 90, 30, .09); --t-shadow: rgba(110, 90, 30, .10); --t-shadow-deep: rgba(110, 90, 30, .30); }
-.tile-peach  { --t-bg: linear-gradient(170deg, #FBE7DB 0%, #F3D3C2 100%); --t-head: #80492F; --t-body: #7A4630; --t-edge: rgba(128, 73, 47, .08); --t-shadow: rgba(128, 73, 47, .10); --t-shadow-deep: rgba(128, 73, 47, .28); }
-.tile-violet { --t-bg: linear-gradient(170deg, #EEE7F6 0%, #DFD3EE 100%); --t-head: #5B4776; --t-body: #6A5686; --t-edge: rgba(91, 71, 118, .08); --t-shadow: rgba(91, 71, 118, .10); --t-shadow-deep: rgba(91, 71, 118, .30); }
-.tile-mint   { --t-bg: linear-gradient(170deg, #E6F1EC 0%, #D3E6DD 100%); --t-head: #3C5E52; --t-body: #4A6A5E; --t-edge: rgba(60, 94, 82, .08); --t-shadow: rgba(60, 94, 82, .10); --t-shadow-deep: rgba(60, 94, 82, .28); }
-@media (min-width: 720px) { .tile-wide { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 2.2fr; gap: var(--s4); align-items: start; } }
-.tile-wide .also { margin-top: 0; }
+/* ---------- what's in Wonder (N321): four screens taken apart, in the exploded-view language above ---------- */
+.feature { margin-top: var(--s6); }
+.feature + .feature { margin-top: var(--s7); }
+.feature h3 { font-size: clamp(28px, 3.2vw, 40px); line-height: 1.12; font-weight: 500; letter-spacing: -.01em; }
+.feature .sect-head p { margin-top: var(--s2); }
+/* a slip of the page itself (lines of the script): square paper, the same lifted shadow as every cut part */
+.ex-slip img { border-radius: 2px; }
 
-.also {
-  display: grid; gap: var(--s2) var(--s4); margin: var(--s3) 0 0; padding: 0; list-style: none;
-  color: var(--t-body); font-size: 17px; line-height: 1.5;
+/* ---------- the phone app (N321): a band of the phone's own yellow paper ---------- */
+.phone-band {
+  position: relative; overflow: clip;
+  background:
+    radial-gradient(70% 80% at 85% 0%, rgba(255, 255, 255, .55), rgba(255, 255, 255, 0) 65%),
+    linear-gradient(175deg, #FBF3D4 0%, #F3E5B3 100%);
+  color: #6A5826;
 }
-@media (min-width: 720px) { .also { grid-template-columns: repeat(3, 1fr); } }
-.also li { display: flex; gap: 12px; align-items: baseline; }
-.also li::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--t-head); opacity: .55; transform: translateY(-2px); }
+/* the app's own icon is the picture (the phone screen is shown just above, in the ideas section) */
+.phone-grid { display: grid; gap: var(--s3); align-items: center; max-width: 960px; margin-inline: auto; }
+@media (min-width: 720px) { .phone-grid { grid-template-columns: auto 1fr; gap: var(--s5); } }
+.phone-icon {
+  width: clamp(88px, 14vw, 168px); height: auto; aspect-ratio: 1;
+  border-radius: 22.5%;
+  box-shadow: 0 0 0 1px rgba(110, 90, 30, .10), 0 2px 4px rgba(110, 90, 30, .14), 0 22px 36px -14px rgba(110, 90, 30, .45);
+}
+.phone-band .kicker { color: #6E5A1E; }
+.phone-band h2 { color: #5C4B18; }
+.phone-copy > p:not(.kicker):not(.phone-note) { margin: var(--s2) 0 0; max-width: 30em; font-size: clamp(17px, 1.6vw, 20px); line-height: 1.55; color: #6A5826; text-wrap: pretty; }
+.phone-copy > .phone-note { margin: var(--s3) 0 0; font-size: 16px; line-height: 1.5; color: #75622A; }
+.phone-get { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3) var(--s4); margin-top: var(--s4); }
+.phone-qr { display: none; }
+@media (min-width: 900px) and (hover: hover) {
+  /* on a computer the phone is in the other hand: the camera reads the code */
+  .phone-qr { display: inline-flex; align-items: center; gap: 14px; font-size: 16px; color: #75622A; }
+  .phone-qr img { width: 132px; height: 132px; padding: 6px; border-radius: 12px; background: #fff; box-shadow: 0 0 0 1px rgba(110, 90, 30, .14), 0 8px 16px -10px rgba(110, 90, 30, .45); }
+}
 
 /* ---------- pricing: the green band, books floating in it ---------- */
 .price-band {
@@ -719,9 +725,6 @@ h3 { margin: 0; color: var(--ink-head); font-size: 20px; line-height: 1.35; font
   .paper img { animation: drift 16s ease-in-out infinite alternate; }
   @keyframes drift { from { translate: 0 0; scale: 1; } to { translate: 6px -10px; scale: 1.015; } }
 
-  /* hover: lift, with the shadow following */
-  .tile { transition: translate .3s ease, box-shadow .3s ease; }
-  .tile:hover { translate: 0 -5px; box-shadow: 0 1px 0 rgba(255, 255, 255, .75) inset, 0 0 0 1px var(--t-edge), 0 4px 8px var(--t-shadow), 0 30px 44px -22px var(--t-shadow-deep); }
   .float { transition: translate .35s ease, box-shadow .35s ease; }
   .board-card:hover, .menu-card:hover, .dialog-card:hover { translate: 0 -4px; }
   .tile-card { transition: transform .35s ease; }

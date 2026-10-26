@@ -74,8 +74,13 @@
             <a href="https://apps.microsoft.com/detail/9P688NX68S8Q"><svg aria-hidden="true"><use href="#i-windows"/></svg>ווינדוס</a>
           </div>
         </div>
-        <p class="cta-note">משהו לא עובד? <a href="mailto:support@wonder-pages.com">support@wonder-pages.com</a></p>
-      </div>
+        <p class="cta-note">משהו לא עובד? <a href="mailto:support@wonder-pages.com">support@wonder-pages.com</a><span class="again-at"> · <a href="mailto:support@wonder-pages.com" data-again aria-controls="again" aria-expanded="false">כבר נרשמתם?</a></span></p>
+        <!-- N258: the welcome mail (the key) again, by address; the page never says who signed up (assets/again.js). -->
+        <form class="again" id="again" hidden dir="rtl" novalidate aria-label="לקבל שוב את מייל ההצטרפות">
+          <label for="again-email">המייל שאיתו נרשמתם. נשלח אליו שוב את ההורדה ואת המפתח.</label>
+          <span class="again-row"><input id="again-email" type="email" dir="ltr" autocomplete="email" inputmode="email" maxlength="254" spellcheck="false" required><button type="submit" class="btn">לשלוח שוב</button></span>
+          <p class="again-said" role="status" aria-live="polite"></p>
+        </form>      </div>
 
     </div>
   </section>
@@ -93,5 +98,6 @@
 </footer>
 
 <script src="assets/start.js"></script>
+<script src="assets/again.js"></script>
 </body>
 </html>
